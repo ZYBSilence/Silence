@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.graduation.bbs.dao.PostDao">
+    <resultMap id="p_post_result_map" type="cn.graduation.bbs.entity.PostEntity">
+        <id column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="content" property="content"/>
+        <result column="user_id" property="userId"/>
+        <result column="post_type_id" property="postTypeId"/>
+        <result column="recommend" property="recommend"/>
+        <result column="status" property="status"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="add_recommend_time" property="addRecommendTime"/>
+        <result column="add_banned_time" property="addBannedTime"/>
+
+        <result column="post_type" property="postType"/>
+        <result column="username" property="username"/>
+        <result column="nick_name" property="nickName"/>
+    </resultMap>
+
+    <select id="queryPostList" parameterType="cn.graduation.bbs.dto.post.PostDTO" resultMap="p_post_result_map">
+        SELECT
+        p.id,
+        p.title,
+        p.content,
+        p.user_id,
+        p.post_type_id,
+        p.recommend,
+        p.status,
+        p.create_time,
+        p.update_time,
+        p.add_recommend_time,
+        p.add_banned_time,
+        pt.post_type,
+        u.username,
+        u.nick_name
+        from p_post p,
+        p_post_type pt,
+        sys_user u
+        where 1=1
+        <if test="title != null and title.trim() != ''">
+            and p.title like concat('%', #{title}, '%')
+        </if>
+        <if test="userId != null">
+            and p.user_id=#{userId}
+        </if>
+        <if test="postTypeId != null">
+            and p.post_type_id=#{postTypeId}
+        </if>
+        <if test="recommend != null">
+            and p.recommend=#{recommend}
+        </if>
+        <if test="status != null">
+            and p.status=#{status}
+        </if>
+        <if test="startTime != null">
+            and p.create_time <![CDATA[ >= ]]> #{startTime}
+        </if>
+        <if test="endTime != null">
+            and p.create_time <![CDATA[ <= ]]> #{endTime}
+        </if>
+        and p.post_type_id = pt.id
+        and p.user_id = u.id
+        and u.del_flag=0
+        order by
+        <choose>
+            <when test='recommend != null'>p.add_recommend_time</when>
+            <when test='status == 1'>p.add_banned_time</when>
+            <otherwise>
+                p.create_time
+            </otherwise>
+        </choose>
+        desc
+    </select>
+
+    <select id="queryPostById" resultMap="p_post_result_map">
+        SELECT p.id,
+               p.title,
+               p.content,
+               p.user_id,
+               p.post_type_id,
+               p.recommend,
+               p.status,
+               p.create_time,
+               p.update_time,
+               pt.post_type,
+               u.username,
+               u.nick_name
+        from p_post p,
+             p_post_type pt,
+             sys_user u
+        where p.post_type_id = pt.id
+          and p.user_id = u.id
+          and p.id = #{id}
+    </select>
+
+    <update id="modifyRecommend" parameterType="cn.graduation.bbs.dto.post.PostDTO">
+        update p_post
+        <set>
+            <if test="recommend != null">
+                recommend=#{recommend},
+            </if>
+            <if test="addRecommendTime != null">
+                add_recommend_time=#{addRecommendTime}
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <update id="modifyStatus" parameterType="cn.graduation.bbs.dto.post.PostDTO">
+        update p_post
+        <set>
+            <if test="status != null">
+                status=#{status},
+            </if>
+            <if test="addBannedTime != null">
+                add_banned_time=#{addBannedTime}
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <update id="batchModifyStatus" parameterType="java.util.List">
+        update p_post set status=1,add_banned_time=now()
+        where id in
+        <foreach collection="list" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </update>
+
+    <delete id="delete" parameterType="java.util.List">
+        delete p_post,p_comment from p_post LEFT JOIN p_comment on p_post.id=p_comment.post_id where
+        p_post.id in
+        <foreach collection="list" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <update id="unBanPost" parameterType="java.util.List">
+        update p_post set status=0
+        where id in
+        <foreach collection="list" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </update>
+
+    <select id="queryPostCountByPostTypeId" resultType="java.lang.Integer">
+        select
+            COUNT(1)
+        from
+            p_post p
+        where
+            p.post_type_id = #{postTypeId}
+          and
+            p.status = 0;
+    </select>
+</mapper>

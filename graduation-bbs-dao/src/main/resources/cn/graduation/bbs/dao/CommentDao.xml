@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.graduation.bbs.dao.CommentDao">
+    <resultMap id="p_comment_result_map" type="cn.graduation.bbs.entity.CommentEntity">
+        <id column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="post_id" property="postId"/>
+        <result column="comment" property="comment"/>
+        <result column="create_time" property="createTime"/>
+
+        <result column="title" property="title"/>
+        <result column="status" property="status"/>
+        <result column="nick_name" property="nickName"/>
+        <result column="username" property="username"/>
+        <result column="post_type" property="postType"/>
+        <result column="content" property="postContent"/>
+    </resultMap>
+
+    <select id="queryCommentList" parameterType="cn.graduation.bbs.dto.comment.CommentDTO"
+            resultMap="p_comment_result_map">
+        select
+        pc.id,
+        pc.user_id,
+        pc.post_id,
+        pc.comment,
+        pc.create_time,
+        p.title,
+        p.status,
+        u.nick_name
+        from p_comment pc,
+        p_post p,
+        sys_user u
+        where 1 = 1
+        <if test="userId != null">
+            and pc.user_id=#{userId}
+        </if>
+        <if test="postId != null">
+            and pc.post_id=#{postId}
+        </if>
+        <if test="startTime != null">
+            and pc.create_time <![CDATA[ >= ]]> #{startTime}
+        </if>
+        <if test="endTime != null">
+            and pc.create_time <![CDATA[ <= ]]> #{endTime}
+        </if>
+        and pc.user_id = u.id
+        and pc.post_id = p.id
+        and u.del_flag=0
+        order by pc.create_time desc
+    </select>
+
+    <delete id="delete" parameterType="java.util.List">
+        delete p_comment from p_comment where
+        p_comment.id in
+        <foreach collection="list" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <select id="queryCommentById" resultMap="p_comment_result_map">
+        select
+            pc.id,
+            pc.user_id,
+            pc.post_id,
+            pc.comment,
+            pc.create_time,
+            p.title,
+            p.content,
+            p.status,
+            u.nick_name,
+            u.username,
+            pt.post_type
+        from p_comment pc,
+             p_post p,
+             p_post_type pt,
+             sys_user u
+        WHERE pc.post_id = p.id
+          and pc.user_id = u.id
+          and p.post_type_id = pt.id
+          and pc.id = #{id};
+    </select>
+</mapper>

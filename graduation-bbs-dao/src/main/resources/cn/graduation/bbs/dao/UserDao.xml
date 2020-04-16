@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.graduation.bbs.dao.UserDao">
+    <resultMap id="sys_user_result_map" type="cn.graduation.bbs.entity.UserEntity">
+        <id column="id" property="id"/>
+        <result column="username" property="username"/>
+        <result column="password" property="password"/>
+        <result column="nick_name" property="nickName"/>
+        <result column="gender" property="gender"/>
+        <result column="photo" property="photo"/>
+        <result column="email" property="email"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="del_flag" property="delFlag"/>
+        <result column="add_banned_time" property="addBannedTime"/>
+
+        <result column="role_id" property="roleId"/>
+        <result column="role_name" property="roleName"/>
+        <result column="role_desc" property="roleDesc"/>
+    </resultMap>
+    <select id="queryUserList" parameterType="cn.graduation.bbs.dto.user.UserDTO" resultMap="sys_user_result_map">
+        select u.id,
+        u.username,
+        u.password,
+        u.nick_name,
+        u.gender,
+        u.photo,
+        u.email,
+        u.create_time,
+        u.update_time,
+        u.del_flag,
+        u.add_banned_time,
+        ur.role_id,
+        r.role_name,
+        r.role_desc
+        from sys_user u,
+        sys_user_role ur,
+        sys_role r
+        where 1=1
+        <if test="username != null and username.trim() != ''">
+            and u.username like concat('%', #{username}, '%')
+        </if>
+        <if test="nickName != null and nickName.trim() != ''">
+            and u.nick_name like concat('%', #{nickName}, '%')
+        </if>
+        <if test="startTime != null">
+            and u.create_time <![CDATA[ >= ]]> #{startTime}
+        </if>
+        <if test="endTime != null">
+            and u.create_time <![CDATA[ <= ]]> #{endTime}
+        </if>
+        <if test="delFlag != null">
+            and u.del_flag=#{delFlag}
+        </if>
+        and u.id=ur.user_id and r.id=ur.role_id
+        order by
+        <choose>
+            <when test='delFlag == 1'>u.add_banned_time</when>
+            <otherwise>
+                u.create_time
+            </otherwise>
+        </choose>
+        desc
+    </select>
+
+    <insert id="save" parameterType="cn.graduation.bbs.entity.UserEntity">
+        insert into sys_user(username,
+        password,
+        nick_name,
+        gender,
+        photo,
+        email,
+        create_time)
+        values (#{username},
+        #{password},
+        #{nickName},
+        #{gender},
+        #{photo},
+        #{email},
+        #{createTime})
+        <selectKey keyProperty="id" order="AFTER" resultType="Integer">
+            <!-- 得到刚insert到数据表中的记录的主键值，只适用于自增主键 -->
+            SELECT LAST_INSERT_ID() AS id
+        </selectKey>
+    </insert>
+
+    <update id="update" parameterType="cn.graduation.bbs.entity.UserEntity">
+        update sys_user
+        <set>
+            <if test="username != null and username.trim() != ''">
+                username=#{username},
+            </if>
+            <if test="password != null and password.trim() != ''">
+                password=#{password},
+            </if>
+            <if test="nickName != null and nickName.trim() != ''">
+                nick_name=#{nickName},
+            </if>
+            <if test="gender != null">
+                gender=#{gender},
+            </if>
+            <if test="photo != null and photo.trim() != ''">
+                photo=#{photo},
+            </if>
+            <if test="email != null and email.trim() != ''">
+                email=#{email},
+            </if>
+            <if test="updateTime != null">
+                update_time=#{updateTime}
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="java.util.List">
+        delete sys_user,sys_user_role from sys_user LEFT JOIN sys_user_role on sys_user.id=sys_user_role.user_id where
+        sys_user.id in
+        <foreach collection="list" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+    <select id="queryById" parameterType="java.lang.Integer" resultMap="sys_user_result_map">
+        select u.id,
+               u.username,
+               u.password,
+               u.nick_name,
+               u.gender,
+               u.photo,
+               u.email,
+               u.create_time,
+               u.update_time,
+               u.del_flag,
+               ur.role_id,
+               r.role_name,
+               r.role_desc
+        from sys_user u,
+             sys_user_role ur,
+             sys_role r
+        where u.id = ur.user_id
+          and r.id = ur.role_id
+          and u.id = #{id}
+    </select>
+
+    <select id="findByUsername" parameterType="java.lang.String" resultMap="sys_user_result_map">
+        select u.id,
+               u.username,
+               u.password,
+               u.nick_name,
+               u.gender,
+               u.photo,
+               u.email,
+               u.create_time,
+               u.update_time,
+               u.del_flag,
+               ur.role_id,
+               r.role_name,
+               r.role_desc
+        from sys_user u,
+             sys_user_role ur,
+             sys_role r
+        where u.username = #{username}
+          and u.id = ur.user_id
+          and r.id = ur.role_id
+    </select>
+
+    <select id="findByUserIdList" parameterType="java.util.List" resultMap="sys_user_result_map">
+        select u.id,
+        u.username,
+        u.password,
+        u.nick_name,
+        u.gender,
+        u.photo,
+        u.email,
+        u.create_time,
+        u.update_time,
+        u.del_flag,
+        ur.role_id,
+        r.role_name,
+        r.role_desc
+        from sys_user u,
+        sys_user_role ur,
+        sys_role r
+        where 1=1 and u.del_flag=0 and u.id=ur.user_id and r.id=ur.role_id
+        and u.id in
+        <foreach collection="list" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </select>
+
+    <update id="modifyDelFlag" parameterType="cn.graduation.bbs.dto.user.UserDTO">
+        update sys_user
+        <set>
+            <if test="delFlag != null">
+                del_flag=#{delFlag},
+            </if>
+            <if test="addBannedTime != null">
+                add_banned_time=#{addBannedTime}
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <update id="batchBannedUser" parameterType="java.util.List">
+        update sys_user set del_flag=1,add_banned_time=now()
+        where id in
+        <foreach collection="list" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </update>
+
+    <update id="unBanUser" parameterType="java.util.List">
+        update sys_user set del_flag=0
+        where id in
+        <foreach collection="list" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </update>
+</mapper>
