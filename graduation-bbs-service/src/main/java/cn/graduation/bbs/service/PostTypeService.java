@@ -4,7 +4,7 @@ import cn.graduation.bbs.common.WebResponse;
 import cn.graduation.bbs.vo.post.PostTypeFilter;
 
 /**
- * @desc:
+ * @desc: 帖子类型管理
  * @author: zyb
  * @since: 2020/4/7 18:23
  */
