@@ -64,4 +64,12 @@ public interface PostService {
      * @return
      */
     WebResponse unBanPost(PostFilter postFilter);
+
+    /**
+     * 新增帖子
+     *
+     * @param postFilter
+     * @return
+     */
+    WebResponse addPost(PostFilter postFilter);
 }

@@ -45,6 +45,10 @@ public class PostDTO {
      */
     private Integer id;
     /**
+     * 创建时间
+     */
+    private Date createTime;
+    /**
      * 更新时间
      */
     private Date updateTime;
@@ -60,4 +64,8 @@ public class PostDTO {
      * id集合
      */
     private List<Integer> ids;
+    /**
+     * 帖子内容
+     */
+    private String content;
 }

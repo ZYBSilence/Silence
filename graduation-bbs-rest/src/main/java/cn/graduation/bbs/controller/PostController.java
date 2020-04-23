@@ -63,4 +63,10 @@ public class PostController {
         log.info("批量解封帖子 unBanPost 请求参数{" + postFilter + "}");
         return postService.unBanPost(postFilter);
     }
+
+    @PostMapping("/add")
+    public WebResponse addPost(@RequestBody PostFilter postFilter) {
+        log.info("新增帖子 addPost 请求参数{" + postFilter + "}");
+        return postService.addPost(postFilter);
+    }
 }

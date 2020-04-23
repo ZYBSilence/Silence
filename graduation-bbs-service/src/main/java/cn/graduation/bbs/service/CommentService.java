@@ -1,5 +1,6 @@
 package cn.graduation.bbs.service;
 
+import cn.graduation.bbs.common.Page;
 import cn.graduation.bbs.common.WebResponse;
 import cn.graduation.bbs.vo.comment.CommentFilter;
 
@@ -32,4 +33,20 @@ public interface CommentService {
      * @return
      */
     WebResponse queryCommentById(CommentFilter commentFilter);
+
+    /**
+     * 查找用户评论数量列表
+     *
+     * @param page
+     * @return
+     */
+    WebResponse queryUserCommentCountList(Page page);
+
+    /**
+     * 查找帖子评论数量列表
+     *
+     * @param page
+     * @return
+     */
+    WebResponse queryPostCommentCountList(Page page);
 }

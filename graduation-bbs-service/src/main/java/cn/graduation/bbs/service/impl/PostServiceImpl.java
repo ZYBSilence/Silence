@@ -3,12 +3,14 @@ package cn.graduation.bbs.service.impl;
 import cn.graduation.bbs.common.GradException;
 import cn.graduation.bbs.common.ListPage;
 import cn.graduation.bbs.common.WebResponse;
+import cn.graduation.bbs.dao.CommentDao;
 import cn.graduation.bbs.dao.PostDao;
 import cn.graduation.bbs.dto.post.PostDTO;
 import cn.graduation.bbs.entity.PostEntity;
 import cn.graduation.bbs.enums.StatusCodeEnum;
 import cn.graduation.bbs.service.PostService;
 import cn.graduation.bbs.utils.EmptyUtils;
+import cn.graduation.bbs.utils.OperUserUtils;
 import cn.graduation.bbs.vo.post.PostFilter;
 import cn.graduation.bbs.vo.post.PostVO;
 import com.github.pagehelper.PageHelper;
@@ -29,6 +31,9 @@ import java.util.Optional;
 public class PostServiceImpl implements PostService {
     @Autowired
     private PostDao postDao;
+
+    @Autowired
+    private CommentDao commentDao;
 
     /**
      * 查询帖子列表
@@ -180,6 +185,29 @@ public class PostServiceImpl implements PostService {
         return web;
     }
 
+    /**
+     * 新增帖子
+     *
+     * @param postFilter
+     * @return
+     */
+    @Override
+    public WebResponse addPost(PostFilter postFilter) {
+        if (EmptyUtils.isEmpty(postFilter) || EmptyUtils.isEmpty(postFilter.getPostTypeId()) || EmptyUtils.isEmpty(postFilter.getTitle())
+                || EmptyUtils.isEmpty(postFilter.getContent())) {
+            throw new GradException(StatusCodeEnum.PARAMS_NOT_NULL.getMessage());
+        }
+        WebResponse web = new WebResponse();
+        PostDTO dto = new PostDTO();
+        Optional.ofNullable(OperUserUtils.getUserId()).ifPresent(dto::setUserId);
+        Optional.ofNullable(postFilter.getPostTypeId()).ifPresent(dto::setPostTypeId);
+        Optional.ofNullable(postFilter.getTitle()).ifPresent(dto::setTitle);
+        Optional.ofNullable(postFilter.getContent()).ifPresent(dto::setContent);
+        dto.setCreateTime(new Date());
+        postDao.addPost(dto);
+        return web;
+    }
+
 
     /**
      * 处理返回给持久层的参数
@@ -209,6 +237,7 @@ public class PostServiceImpl implements PostService {
         Optional.ofNullable(v.getId()).ifPresent(vo::setId);
         Optional.ofNullable(v.getUserId()).ifPresent(vo::setUserId);
         Optional.ofNullable(v.getNickName()).ifPresent(vo::setNickname);
+        Optional.ofNullable(v.getPhoto()).ifPresent(vo::setPhoto);
         Optional.ofNullable(v.getTitle()).ifPresent(vo::setTitle);
         Optional.ofNullable(v.getPostType()).ifPresent(vo::setPostType);
         Optional.ofNullable(v.getRecommend()).ifPresent(vo::setRecommend);
@@ -217,6 +246,7 @@ public class PostServiceImpl implements PostService {
         Optional.ofNullable(v.getUpdateTime()).ifPresent(vo::setUpdateTime);
         Optional.ofNullable(v.getAddRecommendTime()).ifPresent(vo::setAddRecommendTime);
         Optional.ofNullable(v.getAddBannedTime()).ifPresent(vo::setAddBannedTime);
+        Optional.ofNullable(commentDao.queryCommentCountByPostId(v.getId())).ifPresent(vo::setCommentCount);
         return vo;
     }
 }

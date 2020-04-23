@@ -81,4 +81,34 @@
           and p.post_type_id = pt.id
           and pc.id = #{id};
     </select>
+
+    <select id="queryCommentCountByPostId" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+        select count(1)
+        from p_comment
+        where post_id = #{postId}
+    </select>
+
+    <resultMap id="user_comment_count_map" type="cn.graduation.bbs.bean.UserCommentCountDO">
+        <result column="user_id" property="userId"/>
+        <result column="count" property="commentCount"/>
+    </resultMap>
+
+    <select id="queryCommentCountList" resultMap="user_comment_count_map">
+        SELECT user_id,COUNT(1) as count
+        FROM p_comment
+        GROUP BY user_id
+        ORDER BY count DESC
+    </select>
+
+    <resultMap id="post_comment_count_map" type="cn.graduation.bbs.bean.PostCommentCountDO">
+        <result column="post_id" property="postId"/>
+        <result column="count" property="commentCount"/>
+    </resultMap>
+
+    <select id="queryPostCommentCountList" resultMap="post_comment_count_map">
+        SELECT post_id,COUNT(1) as count
+        FROM p_comment
+        GROUP BY post_id
+        ORDER BY count DESC
+    </select>
 </mapper>

@@ -19,6 +19,7 @@
         <result column="post_type" property="postType"/>
         <result column="username" property="username"/>
         <result column="nick_name" property="nickName"/>
+        <result column="photo" property="photo"/>
     </resultMap>
 
     <select id="queryPostList" parameterType="cn.graduation.bbs.dto.post.PostDTO" resultMap="p_post_result_map">
@@ -36,7 +37,8 @@
         p.add_banned_time,
         pt.post_type,
         u.username,
-        u.nick_name
+        u.nick_name,
+        u.photo
         from p_post p,
         p_post_type pt,
         sys_user u
@@ -156,5 +158,37 @@
             p.post_type_id = #{postTypeId}
           and
             p.status = 0;
+    </select>
+
+    <insert id="addPost" parameterType="cn.graduation.bbs.dto.post.PostDTO">
+        insert into p_post
+        (user_id,
+         post_type_id,
+         title,
+         content,
+         create_time)
+        values
+        (#{userId},
+         #{postTypeId},
+         #{title},
+         #{content},
+         #{createTime})
+    </insert>
+
+    <select id="findByPostIdList" parameterType="java.util.List" resultMap="p_post_result_map">
+        select p.id,
+        p.title,
+        p.content,
+        p.user_id,
+        p.post_type_id,
+        p.recommend,
+        p.status,
+        p.create_time,
+        p.update_time
+        from p_post p
+        where 1=1 and p.status=0 and p.id in
+        <foreach collection="list" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
     </select>
 </mapper>

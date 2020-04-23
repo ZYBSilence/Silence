@@ -67,4 +67,8 @@ public class PostEntity {
      * 用户昵称
      */
     private String nickName;
+    /**
+     * 头像
+     */
+    private String photo;
 }

@@ -45,4 +45,12 @@ public class PostFilter extends Page {
      * id集合
      */
     private List<Integer> ids;
+    /**
+     * 帖子内容
+     */
+    private String content;
+    /**
+     * 帖子类型id
+     */
+    private Integer postTypeId;
 }

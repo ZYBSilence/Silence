@@ -1,5 +1,8 @@
 package cn.graduation.bbs.dao;
 
+import cn.graduation.bbs.bean.PostCommentCountDO;
+import cn.graduation.bbs.bean.UserCommentCountDO;
+import cn.graduation.bbs.bean.UserPostCountDO;
 import cn.graduation.bbs.dto.comment.CommentDTO;
 import cn.graduation.bbs.entity.CommentEntity;
 
@@ -35,4 +38,26 @@ public interface CommentDao {
      * @return
      */
     CommentEntity queryCommentById(Integer id);
+
+    /**
+     * 根据帖子id查询评论数量
+     *
+     * @param postId
+     * @return
+     */
+    Integer queryCommentCountByPostId(Integer postId);
+
+    /**
+     * 查询用户评论数量列表
+     *
+     * @return
+     */
+    List<UserCommentCountDO> queryCommentCountList();
+
+    /**
+     * 查询帖子评论数量列表
+     *
+     * @return
+     */
+    List<PostCommentCountDO> queryPostCommentCountList();
 }

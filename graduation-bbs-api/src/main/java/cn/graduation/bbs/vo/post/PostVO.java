@@ -24,7 +24,11 @@ public class PostVO {
      */
     private String nickname;
     /**
-     * t帖子标题
+     * 头像
+     */
+    private String photo;
+    /**
+     * 帖子标题
      */
     private String title;
     /**
@@ -55,4 +59,8 @@ public class PostVO {
      * 帖子封禁时间
      */
     private Date addBannedTime;
+    /**
+     * 帖子的评论数量
+     */
+    private Integer commentCount;
 }

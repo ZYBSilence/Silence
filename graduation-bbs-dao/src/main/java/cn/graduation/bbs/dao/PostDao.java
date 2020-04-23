@@ -75,4 +75,20 @@ public interface PostDao {
      * @return
      */
     Integer queryPostCountByPostTypeId(Integer postTypeId);
+
+    /**
+     * 新增帖子
+     *
+     * @param dto
+     * @return
+     */
+    boolean addPost(PostDTO dto);
+
+    /**
+     * 根据帖子id集合查询帖子集合
+     *
+     * @param ids
+     * @return
+     */
+    List<PostEntity> findByPostIdList(List<Integer> ids);
 }

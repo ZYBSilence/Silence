@@ -1,5 +1,6 @@
 package cn.graduation.bbs.controller;
 
+import cn.graduation.bbs.common.Page;
 import cn.graduation.bbs.common.WebResponse;
 import cn.graduation.bbs.service.CommentService;
 import cn.graduation.bbs.vo.comment.CommentFilter;
@@ -38,5 +39,17 @@ public class CommentController {
     public WebResponse queryCommentById(@RequestBody CommentFilter commentFilter) {
         log.info("根绝id查看评论详情 queryCommentById 请求参数{" + commentFilter + "}");
         return commentService.queryCommentById(commentFilter);
+    }
+
+    @PostMapping("/count/user/list")
+    public WebResponse queryUserCommentCountList(@RequestBody Page page) {
+        log.info("查找用户评论数量列表 queryUserCommentCountList 请求参数{" + page + "}");
+        return commentService.queryUserCommentCountList(page);
+    }
+
+    @PostMapping("/count/post/list")
+    public WebResponse queryPostCommentCountList(@RequestBody Page page) {
+        log.info("查找帖子评论数量列表 queryPostCommentCountList 请求参数{" + page + "}");
+        return commentService.queryPostCommentCountList(page);
     }
 }
