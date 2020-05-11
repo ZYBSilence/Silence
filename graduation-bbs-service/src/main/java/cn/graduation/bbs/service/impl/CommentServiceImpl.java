@@ -4,7 +4,6 @@ import cn.graduation.bbs.bean.PostCommentCountDO;
 import cn.graduation.bbs.bean.UserCommentCountDO;
 import cn.graduation.bbs.common.GradException;
 import cn.graduation.bbs.common.ListPage;
-import cn.graduation.bbs.common.Page;
 import cn.graduation.bbs.common.WebResponse;
 import cn.graduation.bbs.dao.CommentDao;
 import cn.graduation.bbs.dao.PostDao;
@@ -13,21 +12,21 @@ import cn.graduation.bbs.dto.comment.CommentDTO;
 import cn.graduation.bbs.entity.CommentEntity;
 import cn.graduation.bbs.entity.PostEntity;
 import cn.graduation.bbs.entity.UserEntity;
+import cn.graduation.bbs.enums.PostTagsEnum;
 import cn.graduation.bbs.enums.StatusCodeEnum;
 import cn.graduation.bbs.service.CommentService;
 import cn.graduation.bbs.utils.EmptyUtils;
+import cn.graduation.bbs.utils.OperUserUtils;
 import cn.graduation.bbs.vo.comment.CommentFilter;
 import cn.graduation.bbs.vo.comment.CommentVO;
 import cn.graduation.bbs.vo.post.PostCommentCountVO;
+import cn.graduation.bbs.vo.post.PostTypeFilter;
 import cn.graduation.bbs.vo.user.UserCommentCountVO;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -119,14 +118,20 @@ public class CommentServiceImpl implements CommentService {
     /**
      * 查找用户评论数量列表
      *
-     * @param page
+     * @param filter
      * @return
      */
     @Override
-    public WebResponse queryUserCommentCountList(Page page) {
+    public WebResponse queryUserCommentCountList(PostTypeFilter filter) {
         WebResponse web = new WebResponse();
-        PageHelper.startPage(page.getPageNum(), page.getPageSize());
-        List<UserCommentCountDO> doList = commentDao.queryCommentCountList();
+        PageHelper.startPage(filter.getPageNum(), filter.getPageSize());
+        List<UserCommentCountDO> doList = commentDao.queryCommentCountList(filter);
+        //防止查询数据为空时控制台报错
+        if (doList == null || doList.size() == 0) {
+            web.setCode(StatusCodeEnum.DATA_IS_NULL.getCode());
+            web.setMessage(StatusCodeEnum.DATA_IS_NULL.getMessage());
+            return web;
+        }
         ListPage<UserCommentCountDO> doListPage = new ListPage<>(doList);
         List<Integer> userIdList = doList.stream().map(v -> v.getUserId()).collect(Collectors.toList());
         List<UserEntity> userList = userDao.findByUserIdList(userIdList);
@@ -147,14 +152,20 @@ public class CommentServiceImpl implements CommentService {
     /**
      * 查找帖子评论数量列表
      *
-     * @param page
+     * @param filter
      * @return
      */
     @Override
-    public WebResponse queryPostCommentCountList(Page page) {
+    public WebResponse queryPostCommentCountList(PostTypeFilter filter) {
         WebResponse web = new WebResponse();
-        PageHelper.startPage(page.getPageNum(), page.getPageSize());
-        List<PostCommentCountDO> doList = commentDao.queryPostCommentCountList();
+        PageHelper.startPage(filter.getPageNum(), filter.getPageSize());
+        List<PostCommentCountDO> doList = commentDao.queryPostCommentCountList(filter);
+        //防止查询数据为空时控制台报错
+        if (doList == null || doList.size() == 0) {
+            web.setCode(StatusCodeEnum.DATA_IS_NULL.getCode());
+            web.setMessage(StatusCodeEnum.DATA_IS_NULL.getMessage());
+            return web;
+        }
         ListPage<PostCommentCountDO> doListPage = new ListPage<>(doList);
         List<Integer> postIdList = doList.stream().map(v -> v.getPostId()).collect(Collectors.toList());
         List<PostEntity> postList = postDao.findByPostIdList(postIdList);
@@ -168,6 +179,85 @@ public class CommentServiceImpl implements CommentService {
             voList.add(vo);
         });
         web.setData(new ListPage<>(voList, doListPage.getPage()));
+        return web;
+    }
+
+    /**
+     * 提交评论
+     *
+     * @param commentFilter
+     * @return
+     */
+    @Override
+    public WebResponse addComment(CommentFilter commentFilter) {
+        if (EmptyUtils.isEmpty(commentFilter) || EmptyUtils.isEmpty(commentFilter.getPostId())
+                || EmptyUtils.isEmpty(commentFilter.getComment())) {
+            throw new GradException(StatusCodeEnum.PARAMS_NOT_NULL.getMessage());
+        }
+        WebResponse web = new WebResponse();
+        CommentDTO dto = new CommentDTO();
+        if (EmptyUtils.isEmpty(OperUserUtils.getUserId())) {
+            web.setCode(StatusCodeEnum.ACCESS_ERROR.getCode());
+            web.setMessage("请先登录账号,再发表评论");
+            return web;
+        }
+        Optional.ofNullable(OperUserUtils.getUserId()).ifPresent(dto::setUserId);
+        Optional.ofNullable(commentFilter.getPostId()).ifPresent(dto::setPostId);
+        Optional.ofNullable(commentFilter.getComment()).ifPresent(dto::setComment);
+        dto.setCreateTime(new Date());
+        commentDao.addComment(dto);
+        return web;
+    }
+
+    /**
+     * 分页查询用户帖子的评论（不包含自己的评论）
+     *
+     * @param commentFilter
+     * @return
+     */
+    @Override
+    public WebResponse queryUserPostCommentList(CommentFilter commentFilter) {
+        if (EmptyUtils.isEmpty(commentFilter)) {
+            throw new GradException(StatusCodeEnum.PARAMS_NOT_NULL.getMessage());
+        }
+        WebResponse web = new WebResponse();
+        PageHelper.startPage(commentFilter.getPageNum(), commentFilter.getPageSize());
+        List<CommentEntity> commentEntities = commentDao.queryUserPostCommentList(OperUserUtils.getUserId());
+        //防止查询数据为空时控制台报错
+        if (commentEntities == null || commentEntities.size() == 0) {
+            web.setCode(StatusCodeEnum.DATA_IS_NULL.getCode());
+            web.setMessage(StatusCodeEnum.DATA_IS_NULL.getMessage());
+            return web;
+        }
+        ListPage<CommentEntity> postListPage = new ListPage<>(commentEntities);
+        List<CommentVO> list = new ArrayList<>();
+        commentEntities.forEach(v -> {
+            CommentVO vo = genCommentEntity(v);
+            list.add(vo);
+        });
+        web.setData(new ListPage<>(list, postListPage.getPage()));
+        return web;
+    }
+
+    /**
+     * 修改评论点赞状态
+     *
+     * @param commentFilter
+     * @return
+     */
+    @Override
+    public WebResponse modifyCommentTags(CommentFilter commentFilter) {
+        if (EmptyUtils.isEmpty(commentFilter) || EmptyUtils.isEmpty(commentFilter.getId()) || EmptyUtils.isEmpty(commentFilter.getTags())) {
+            throw new GradException(StatusCodeEnum.PARAMS_NOT_NULL.getMessage());
+        }
+        WebResponse web = new WebResponse();
+        Integer userId = OperUserUtils.getUserId();
+        //从前端接tags（用户评论状态是已点赞则取消点赞，状态是未点赞则点赞）
+        if (commentFilter.getTags().equals(PostTagsEnum.TAGS_YES.getCode())) {
+            commentDao.deleteCommentTags(userId, commentFilter.getId());
+        } else if (commentFilter.getTags().equals(PostTagsEnum.TAGS_NO.getCode())) {
+            commentDao.addCommentTags(userId, commentFilter.getId());
+        }
         return web;
     }
 
@@ -202,6 +292,18 @@ public class CommentServiceImpl implements CommentService {
         Optional.ofNullable(entity.getTitle()).ifPresent(vo::setTitle);
         Optional.ofNullable(entity.getStatus()).ifPresent(vo::setStatus);
         Optional.ofNullable(entity.getNickName()).ifPresent(vo::setNickName);
+        Optional.ofNullable(entity.getPhoto()).ifPresent(vo::setPhoto);
+        //如果当前用户已登录，则查询此评论是否被点赞
+        if (!EmptyUtils.isEmpty(OperUserUtils.getUserId())) {
+            Integer tags = commentDao.queryUserCommentTags(OperUserUtils.getUserId(), entity.getId());
+            if (EmptyUtils.isEmpty(tags) || tags == 0) {
+                vo.setCommentTags(PostTagsEnum.TAGS_NO.getCode());
+            } else {
+                vo.setCommentTags(PostTagsEnum.TAGS_YES.getCode());
+            }
+        }
+        //查询评论的点赞数
+        Optional.ofNullable(commentDao.queryUserCommentTags(null, entity.getId())).ifPresent(vo::setCommentTagsCount);
         return vo;
     }
 }

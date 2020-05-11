@@ -64,6 +64,9 @@
         <if test="endTime != null">
             and p.create_time <![CDATA[ <= ]]> #{endTime}
         </if>
+        <if test="postType != null and postType.trim() != ''">
+            and pt.post_type like concat('%', #{postType}, '%')
+        </if>
         and p.post_type_id = pt.id
         and p.user_id = u.id
         and u.del_flag=0
@@ -90,7 +93,8 @@
                p.update_time,
                pt.post_type,
                u.username,
-               u.nick_name
+               u.nick_name,
+               u.photo
         from p_post p,
              p_post_type pt,
              sys_user u
@@ -191,4 +195,111 @@
             #{id}
         </foreach>
     </select>
+
+    <update id="updatePost" parameterType="cn.graduation.bbs.dto.post.PostDTO">
+        update p_post
+        <trim prefix="set" suffixOverrides=",">
+            <if test="userId != null">
+                user_id=#{userId},
+            </if>
+            <if test="postTypeId != null">
+                post_type_id=#{postTypeId},
+            </if>
+            <if test="title != null and title.trim() != ''">
+                title=#{title},
+            </if>
+            <if test="content != null and content.trim() != ''">
+                content=#{content},
+            </if>
+            <if test="updateTime != null">
+                update_time=#{updateTime}
+            </if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <resultMap id="user_post_collect_map" type="cn.graduation.bbs.bean.UserPostCollectDO">
+        <result column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="post_id" property="postId"/>
+        <result column="create_time" property="createTime"/>
+        <result column="title" property="title"/>
+    </resultMap>
+
+    <select id="queryUserCollectList" parameterType="java.lang.Integer" resultMap="user_post_collect_map">
+        SELECT upc.id,
+               upc.user_id,
+               upc.post_id,
+               upc.create_time,
+               p.title
+        FROM user_post_collect upc,
+             sys_user u,
+             p_post p
+        where 1 = 1
+          and upc.user_id = u.id
+          and upc.post_id = p.id
+          and u.del_flag = 0
+          and p.status = 0
+          and upc.user_id = #{userId}
+    </select>
+
+    <select id="queryUserCollect" resultType="java.lang.Integer">
+        select count(1)
+        from user_post_collect
+        where 1 = 1
+        <if test="userId != null">
+            and user_id=#{userId}
+        </if>
+        <if test="postId != null">
+            and post_id=#{postId}
+        </if>
+    </select>
+
+    <delete id="deleteCollect">
+        delete
+        from user_post_collect
+        where 1 = 1
+          and user_id = #{userId}
+          and post_id = #{postId}
+    </delete>
+
+    <insert id="addCollect">
+        insert into user_post_collect
+        (user_id,
+         post_id,
+         create_time)
+        values
+        (#{userId},
+         #{postId},
+         #{createTime})
+    </insert>
+
+    <select id="queryUserPostTags" resultType="java.lang.Integer">
+        select count(1)
+        from user_post_tags
+        where 1 = 1
+        <if test="userId != null">
+            and user_id=#{userId}
+        </if>
+        <if test="postId != null">
+            and post_id=#{postId}
+        </if>
+    </select>
+
+    <delete id="deletePostTags">
+        delete
+        from user_post_tags
+        where 1 = 1
+          and user_id = #{userId}
+          and post_id = #{postId}
+    </delete>
+
+    <insert id="addPostTags">
+        insert into user_post_tags
+        (user_id,
+         post_id)
+        values
+        (#{userId},
+         #{postId})
+    </insert>
 </mapper>

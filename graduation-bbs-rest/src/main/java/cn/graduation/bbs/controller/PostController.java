@@ -5,10 +5,7 @@ import cn.graduation.bbs.service.PostService;
 import cn.graduation.bbs.vo.post.PostFilter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @desc: 帖子管理
@@ -68,5 +65,29 @@ public class PostController {
     public WebResponse addPost(@RequestBody PostFilter postFilter) {
         log.info("新增帖子 addPost 请求参数{" + postFilter + "}");
         return postService.addPost(postFilter);
+    }
+
+    @PostMapping("/update")
+    public WebResponse updatePost(@RequestBody PostFilter postFilter) {
+        log.info("修改帖子 updatePost 请求参数{" + postFilter + "}");
+        return postService.updatePost(postFilter);
+    }
+
+    @PostMapping("/collect/list")
+    public WebResponse queryUserCollectList(@RequestBody PostFilter postFilter){
+        log.info("分页查询用户收藏帖子列表 queryUserCollectList 请求参数{" + postFilter + "}");
+        return postService.queryUserCollectList(postFilter);
+    }
+
+    @PostMapping("/collect/modify")
+    public WebResponse modifyCollect(@RequestBody PostFilter postFilter){
+        log.info("修改帖子收藏状态 modifyCollect 请求参数{" + postFilter + "}");
+        return postService.modifyCollect(postFilter);
+    }
+
+    @PostMapping("/tags/modify")
+    public WebResponse modifyPostTags(@RequestBody PostFilter postFilter){
+        log.info("修改帖子点赞状态 modifyPostTags 请求参数{" + postFilter + "}");
+        return postService.modifyPostTags(postFilter);
     }
 }

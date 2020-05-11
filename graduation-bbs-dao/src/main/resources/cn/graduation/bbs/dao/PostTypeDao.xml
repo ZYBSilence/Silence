@@ -50,7 +50,7 @@
         update p_post_type
         <set>
             <if test="postType != null and postType.trim() != ''">
-                post_type=#{postType},
+                post_type=#{postType}
             </if>
         </set>
         where id = #{id}

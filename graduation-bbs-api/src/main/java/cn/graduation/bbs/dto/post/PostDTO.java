@@ -25,6 +25,10 @@ public class PostDTO {
      */
     private Integer postTypeId;
     /**
+     * 帖子类型
+     */
+    private String postType;
+    /**
      * 是否为推荐（0-否，1-是）
      */
     private Integer recommend;

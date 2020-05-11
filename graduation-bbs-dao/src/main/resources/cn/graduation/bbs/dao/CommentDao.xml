@@ -14,6 +14,7 @@
         <result column="status" property="status"/>
         <result column="nick_name" property="nickName"/>
         <result column="username" property="username"/>
+        <result column="photo" property="photo"/>
         <result column="post_type" property="postType"/>
         <result column="content" property="postContent"/>
     </resultMap>
@@ -28,7 +29,8 @@
         pc.create_time,
         p.title,
         p.status,
-        u.nick_name
+        u.nick_name,
+        u.photo
         from p_comment pc,
         p_post p,
         sys_user u
@@ -93,9 +95,14 @@
         <result column="count" property="commentCount"/>
     </resultMap>
 
-    <select id="queryCommentCountList" resultMap="user_comment_count_map">
-        SELECT user_id,COUNT(1) as count
-        FROM p_comment
+    <select id="queryCommentCountList" parameterType="cn.graduation.bbs.vo.post.PostTypeFilter"
+            resultMap="user_comment_count_map">
+        SELECT c.user_id,COUNT(1) as count
+        FROM p_comment c,p_post p
+        where 1=1 and c.post_id=p.id and p.status=0
+        <if test="id != null">
+            and p.post_type_id=#{id}
+        </if>
         GROUP BY user_id
         ORDER BY count DESC
     </select>
@@ -105,10 +112,80 @@
         <result column="count" property="commentCount"/>
     </resultMap>
 
-    <select id="queryPostCommentCountList" resultMap="post_comment_count_map">
-        SELECT post_id,COUNT(1) as count
-        FROM p_comment
+    <select id="queryPostCommentCountList" parameterType="cn.graduation.bbs.vo.post.PostTypeFilter"
+            resultMap="post_comment_count_map">
+        SELECT c.post_id,COUNT(1) as count
+        FROM p_comment c,p_post p
+        where 1=1 and c.post_id=p.id and p.status=0
+        <if test="id != null">
+            and p.post_type_id=#{id}
+        </if>
         GROUP BY post_id
         ORDER BY count DESC
     </select>
+
+    <insert id="addComment" parameterType="cn.graduation.bbs.dto.comment.CommentDTO">
+        insert into p_comment
+        (user_id,
+         post_id,
+         comment,
+         create_time)
+        values
+        (#{userId},
+         #{postId},
+         #{comment},
+         #{createTime})
+    </insert>
+
+    <select id="queryUserPostCommentList" parameterType="java.lang.Integer" resultMap="p_comment_result_map">
+        select
+            pc.id,
+            pc.user_id,
+            pc.post_id,
+            pc.comment,
+            pc.create_time,
+            p.title,
+            p.status,
+            u.nick_name,
+            u.photo
+        from p_comment pc,
+             p_post p,
+             sys_user u
+        where 1 = 1
+          and pc.user_id = u.id
+          and pc.post_id = p.id
+          and u.del_flag = 0
+          and pc.user_id <![CDATA[ <> ]]> #{userId}
+          and pc.post_id in (select id from p_post where user_id = #{userId})
+        order by pc.create_time desc
+    </select>
+
+    <select id="queryUserCommentTags" resultType="java.lang.Integer">
+        select count(1)
+        from user_comment_tags
+        where 1 = 1
+        <if test="userId != null">
+            and user_id=#{userId}
+        </if>
+        <if test="commentId != null">
+            and comment_id=#{commentId}
+        </if>
+    </select>
+
+    <delete id="deleteCommentTags">
+        delete
+        from user_comment_tags
+        where 1 = 1
+          and user_id = #{userId}
+          and comment_id = #{commentId}
+    </delete>
+
+    <insert id="addCommentTags">
+        insert into user_comment_tags
+        (user_id,
+         comment_id)
+        values
+        (#{userId},
+         #{commentId})
+    </insert>
 </mapper>

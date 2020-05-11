@@ -43,4 +43,16 @@ public class CommentVO {
      * 用户昵称
      */
     private String nickName;
+    /**
+     * 用户头像
+     */
+    private String photo;
+    /**
+     * 评论点赞标记
+     */
+    private Integer commentTags;
+    /**
+     * 评论点赞数量
+     */
+    private Integer commentTagsCount;
 }

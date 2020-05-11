@@ -27,4 +27,12 @@ public class CommentDTO {
      * 结束时间
      */
     private Date endTime;
+    /**
+     * 评论内容
+     */
+    private String comment;
+    /**
+     * 创建时间
+     */
+    private Date createTime;
 }

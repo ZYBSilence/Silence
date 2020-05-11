@@ -37,4 +37,12 @@ public class CommentFilter extends Page {
      * id集合
      */
     private List<Integer> ids;
+    /**
+     * 评论内容
+     */
+    private String comment;
+    /**
+     * 评论点赞状态
+     */
+    private Integer tags;
 }

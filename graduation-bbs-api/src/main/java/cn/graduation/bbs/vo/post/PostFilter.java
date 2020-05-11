@@ -53,4 +53,16 @@ public class PostFilter extends Page {
      * 帖子类型id
      */
     private Integer postTypeId;
+    /**
+     * 帖子类型
+     */
+    private String postType;
+    /**
+     * 帖子收藏状态
+     */
+    private Integer collect;
+    /**
+     * 帖子点赞状态
+     */
+    private Integer tags;
 }

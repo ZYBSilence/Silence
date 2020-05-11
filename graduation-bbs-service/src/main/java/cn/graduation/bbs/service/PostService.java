@@ -72,4 +72,36 @@ public interface PostService {
      * @return
      */
     WebResponse addPost(PostFilter postFilter);
+
+    /**
+     * 修改帖子
+     *
+     * @param postFilter
+     * @return
+     */
+    WebResponse updatePost(PostFilter postFilter);
+
+    /**
+     * 分页查询用户收藏帖子列表
+     *
+     * @param postFilter
+     * @return
+     */
+    WebResponse queryUserCollectList(PostFilter postFilter);
+
+    /**
+     * 修改帖子收藏状态
+     *
+     * @param postFilter
+     * @return
+     */
+    WebResponse modifyCollect(PostFilter postFilter);
+
+    /**
+     * 修改帖子点赞状态
+     *
+     * @param postFilter
+     * @return
+     */
+    WebResponse modifyPostTags(PostFilter postFilter);
 }

@@ -48,6 +48,10 @@ public class CommentEntity {
      */
     private String username;
     /**
+     * 用户头像
+     */
+    private String photo;
+    /**
      * 帖子类型
      */
     private String postType;
