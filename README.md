@@ -1,5 +1,5 @@
 # Silence
-基于SpringBoot+SpringSecurity+Thymeleaf实现的Silence社区，分为社区和后台管理两部分，社区页面前端模板使用Layui,后台管理前端模板使用javaex，因为是毕业设计，当前还未完成，所以github分享的只有后端代码
+基于SpringBoot+SpringSecurity+Thymeleaf实现的Silence社区，分为社区和后台管理两部分，社区页面前端模板使用Layui,后台管理前端模板使用javaex，因为是毕业设计，功能有些许不够完善，所以github分享的只有后端代码
 
 ## 后端技术栈：
 ```
@@ -89,5 +89,12 @@
 ```
 1520949225@qq.com
 ```
+
+## 访问地址：
+```
+项目部署到自己的阿里云服务器，访问路径：
+http://115.29.179.11:8080
+```
+## 项目效果图
 
 
