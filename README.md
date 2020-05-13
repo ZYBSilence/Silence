@@ -99,16 +99,22 @@
 
 ### 平台首页
 <div align=center><img width="800" height="400" src="https://github.com/ZYBSilence/photo/blob/master/shouye.png"/></div>
+
 ### 发帖
 <div align=center><img width="800" height="400" src="https://github.com/ZYBSilence/photo/blob/master/fatie.png"/></div>
+
 ### 帖子详情
 <div align=center><img width="800" height="400" src="https://github.com/ZYBSilence/photo/blob/master/xiangqing.png"/></div>
+
 ### 用户主页
 <div align=center><img width="800" height="400" src="https://github.com/ZYBSilence/photo/blob/master/yonghuzhuye.png"/></div>
+
 ### 个人中心
 <div align=center><img width="800" height="400" src="https://github.com/ZYBSilence/photo/blob/master/gerenzhongxin.png"/></div>
+
 ### 后台首页
 <div align=center><img width="800" height="400" src="https://github.com/ZYBSilence/photo/blob/master/houtaishouye.png"/></div>
+
 ### 后台管理中的帖子管理
 <div align=center><img width="800" height="400" src="https://github.com/ZYBSilence/photo/blob/master/houtai.png"/></div>
 
