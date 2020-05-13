@@ -94,7 +94,7 @@
  [Silence社区](http://115.29.179.11:8080/)
  
 ## 项目效果图
-<div align=center><img width="800" height="600" src="https://github.com/ZYBSilence/photo/blob/master/zhuce.png"/></div>
+<div align=center><img width="800" height="450" src="https://github.com/ZYBSilence/photo/blob/master/zhuce.png"/></div>
 
 
 
