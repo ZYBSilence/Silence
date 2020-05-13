@@ -96,6 +96,7 @@
 ## 项目效果图
 ### 社区注册页
 <div align=center><img width="800" height="400" src="https://github.com/ZYBSilence/photo/blob/master/zhuce.png"/></div>
+
 ### 平台首页
 <div align=center><img width="800" height="400" src="https://github.com/ZYBSilence/photo/blob/master/shouye.png"/></div>
 ### 发帖
