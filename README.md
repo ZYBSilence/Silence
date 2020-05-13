@@ -91,13 +91,10 @@
 ```
 
 ## 访问地址：
-```
-项目部署到自己的阿里云服务器，访问路径：
-
-
-```
  [Silence社区](http://115.29.179.11:8080/)
  
 ## 项目效果图
+<div align=center><img width="150" height="150" src="https://github.com/ZYBSilence/photo/blob/master/zhuce.png"/></div>
+
 
 
