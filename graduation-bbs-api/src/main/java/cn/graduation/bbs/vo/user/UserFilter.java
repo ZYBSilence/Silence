@@ -41,4 +41,16 @@ public class UserFilter extends Page {
      * id集合
      */
     private List<Integer> ids;
+    /**
+     * 邮箱
+     */
+    private String email;
+    /**
+     * 性别（0男、1女）
+     */
+    private Integer gender;
+    /**
+     * 头像
+     */
+    private String photo;
 }

@@ -218,4 +218,27 @@
             #{id}
         </foreach>
     </update>
+
+    <update id="modifyUserMessage">
+        update sys_user
+        set email=#{email},
+            nick_name=#{nickName},
+            gender=#{gender},
+            update_time=#{updateTime}
+        where id = #{userId}
+    </update>
+
+    <update id="modifyUserPhoto">
+        update sys_user
+        set photo=#{photo},
+            update_time=#{updateTime}
+        where id = #{userId}
+    </update>
+
+    <update id="modifyUserPassword">
+        update sys_user
+        set password=#{newPassword},
+            update_time=#{updateTime}
+        where id = #{userId}
+    </update>
 </mapper>

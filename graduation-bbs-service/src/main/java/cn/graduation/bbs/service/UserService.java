@@ -4,6 +4,7 @@ import cn.graduation.bbs.common.WebResponse;
 import cn.graduation.bbs.entity.UserEntity;
 import cn.graduation.bbs.vo.user.UserDelFilter;
 import cn.graduation.bbs.vo.user.UserFilter;
+import cn.graduation.bbs.vo.user.UserModifyPwdFilter;
 
 /**
  * @desc: 用户管理的业务层接口
@@ -83,4 +84,28 @@ public interface UserService {
      * @return
      */
     WebResponse unBanUser(UserFilter userFilter);
+
+    /**
+     * 修改用户基本信息
+     *
+     * @param userFilter
+     * @return
+     */
+    WebResponse modifyUserMessage(UserFilter userFilter);
+
+    /**
+     * 修改用户头像
+     *
+     * @param userFilter
+     * @return
+     */
+    WebResponse modifyUserPhoto(UserFilter userFilter);
+
+    /**
+     * 修改用户密码
+     *
+     * @param userModifyPwdFilter
+     * @return
+     */
+    WebResponse modifyUserPassword(UserModifyPwdFilter userModifyPwdFilter);
 }

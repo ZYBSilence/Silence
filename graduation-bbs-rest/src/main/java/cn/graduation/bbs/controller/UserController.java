@@ -6,6 +6,7 @@ import cn.graduation.bbs.entity.UserEntity;
 import cn.graduation.bbs.service.UserService;
 import cn.graduation.bbs.vo.user.UserDelFilter;
 import cn.graduation.bbs.vo.user.UserFilter;
+import cn.graduation.bbs.vo.user.UserModifyPwdFilter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -76,5 +77,23 @@ public class UserController {
     public WebResponse unBanPost(@RequestBody UserFilter userFilter) {
         log.info("批量解封用户 unBanUser 请求参数{" + userFilter + "}");
         return userService.unBanUser(userFilter);
+    }
+
+    @PostMapping("/set/message")
+    public WebResponse modifyUserMessage(@RequestBody UserFilter userFilter) {
+        log.info("修改用户基本信息 modifyUserMessage 请求参数{" + userFilter + "}");
+        return userService.modifyUserMessage(userFilter);
+    }
+
+    @PostMapping("/set/photo")
+    public WebResponse modifyUserPhoto(@RequestBody UserFilter userFilter) {
+        log.info("修改用户头像 modifyUserPhoto 请求参数{" + userFilter + "}");
+        return userService.modifyUserPhoto(userFilter);
+    }
+
+    @PostMapping("/set/pwd")
+    public WebResponse modifyUserPassword(@RequestBody UserModifyPwdFilter userModifyPwdFilter) {
+        log.info("修改用户密码 modifyUserPassword 请求参数{" + userModifyPwdFilter + "}");
+        return userService.modifyUserPassword(userModifyPwdFilter);
     }
 }

@@ -9,8 +9,10 @@ import cn.graduation.bbs.enums.StatusCodeEnum;
 import cn.graduation.bbs.service.UserService;
 import cn.graduation.bbs.utils.EmptyUtils;
 import cn.graduation.bbs.utils.MailUtils;
+import cn.graduation.bbs.utils.OperUserUtils;
 import cn.graduation.bbs.vo.user.UserDelFilter;
 import cn.graduation.bbs.vo.user.UserFilter;
+import cn.graduation.bbs.vo.user.UserModifyPwdFilter;
 import cn.graduation.bbs.vo.user.UserVO;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -81,7 +83,7 @@ public class UserServiceImpl implements UserService {
             return web;
         }
         //发送邮件邮件通知在Silence社区注册新用户
-        String content = "欢迎加入Silence社区<a href='http://localhost:8080'><button>点此进入</button></a>";
+        String content = "欢迎加入Silence社区<a href='http://115.29.179.11:8080'><button>点此进入</button></a>";
         boolean sendMail = MailUtils.sendMail(userEntity.getEmail(), content, "Silence社区");
         if (!sendMail) {
             web.setCode(StatusCodeEnum.ERROR.getCode());
@@ -252,6 +254,77 @@ public class UserServiceImpl implements UserService {
         return web;
     }
 
+    /**
+     * 修改用户基本信息
+     *
+     * @param userFilter
+     * @return
+     */
+    @Override
+    public WebResponse modifyUserMessage(UserFilter userFilter) {
+        if (EmptyUtils.isEmpty(userFilter) || EmptyUtils.isEmpty(userFilter.getEmail()) ||
+                EmptyUtils.isEmpty(userFilter.getNickName())) {
+            throw new GradException(StatusCodeEnum.PARAMS_NOT_NULL.getMessage());
+        }
+        WebResponse web = new WebResponse();
+        String content = "您好，Silence社区的用户，修改资料成功";
+        boolean sendMail = MailUtils.sendMail(userFilter.getEmail(), content, "Silence社区");
+        if (!sendMail) {
+            web.setCode(StatusCodeEnum.ERROR.getCode());
+            web.setMessage("请输入正确的邮箱");
+            return web;
+        }
+        userDao.modifyUserMessage(OperUserUtils.getUserId(), userFilter.getEmail(), userFilter.getNickName(), userFilter.getGender(), new Date());
+        return web;
+    }
+
+    /**
+     * 修改用户头像
+     *
+     * @param userFilter
+     * @return
+     */
+    @Override
+    public WebResponse modifyUserPhoto(UserFilter userFilter) {
+        if (EmptyUtils.isEmpty(userFilter) || EmptyUtils.isEmpty(userFilter.getPhoto())) {
+            throw new GradException(StatusCodeEnum.PARAMS_NOT_NULL.getMessage());
+        }
+        WebResponse web = new WebResponse();
+        userDao.modifyUserPhoto(OperUserUtils.getUserId(), userFilter.getPhoto(), new Date());
+        return web;
+    }
+
+    /**
+     * 修改用户密码
+     *
+     * @param userModifyPwdFilter
+     * @return
+     */
+    @Override
+    public WebResponse modifyUserPassword(UserModifyPwdFilter userModifyPwdFilter) {
+        if (EmptyUtils.isEmpty(userModifyPwdFilter) || EmptyUtils.isEmpty(userModifyPwdFilter.getNowPassword())
+                || EmptyUtils.isEmpty(userModifyPwdFilter.getNewPassword()) || EmptyUtils.isEmpty(userModifyPwdFilter.getReNewPassword())) {
+            throw new GradException(StatusCodeEnum.PARAMS_NOT_NULL.getMessage());
+        }
+        WebResponse web = new WebResponse();
+        //确认当前密码是否正确
+        BCryptPasswordEncoder b = new BCryptPasswordEncoder();
+        boolean matches = b.matches(userModifyPwdFilter.getNowPassword(), OperUserUtils.getPassword());
+        if (!matches) {
+            web.setCode(StatusCodeEnum.ERROR.getCode());
+            web.setMessage("当前密码输入错误");
+            return web;
+        }
+        //比较新密码和确认密码是否相同，如果不同，则返回提示信息
+        if (!userModifyPwdFilter.getNewPassword().equals(userModifyPwdFilter.getReNewPassword())) {
+            web.setCode(StatusCodeEnum.ERROR.getCode());
+            web.setMessage("两次输入的新密码不一致");
+            return web;
+        }
+        String newPassword = b.encode(userModifyPwdFilter.getNewPassword());
+        userDao.modifyUserPassword(OperUserUtils.getUserId(), newPassword, new Date());
+        return web;
+    }
 
     /**
      * 处理返回给持久层的参数

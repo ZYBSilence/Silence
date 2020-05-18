@@ -4,6 +4,7 @@ import cn.graduation.bbs.dto.user.UserDTO;
 import cn.graduation.bbs.entity.UserEntity;
 import cn.graduation.bbs.vo.user.UserDelFilter;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -93,4 +94,36 @@ public interface UserDao {
      * @return
      */
     boolean unBanUser(List<Integer> ids);
+
+    /**
+     * 修改用户基本信息
+     *
+     * @param userId
+     * @param email
+     * @param nickName
+     * @param gender
+     * @param updateTime
+     * @return
+     */
+    boolean modifyUserMessage(Integer userId, String email, String nickName, Integer gender, Date updateTime);
+
+    /**
+     * 修改用户头像
+     *
+     * @param userId
+     * @param photo
+     * @param updateTime
+     * @return
+     */
+    boolean modifyUserPhoto(Integer userId, String photo, Date updateTime);
+
+    /**
+     * 修改用户密码
+     *
+     * @param userId
+     * @param newPassword
+     * @param updateTime
+     * @return
+     */
+    boolean modifyUserPassword(Integer userId, String newPassword, Date updateTime);
 }

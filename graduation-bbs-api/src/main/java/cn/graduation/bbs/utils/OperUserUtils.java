@@ -58,4 +58,14 @@ public class OperUserUtils {
         MyUserDetails user = getUser();
         return user == null ? null : user.getNickname();
     }
+
+    /**
+     * 获取当前登录用户密码
+     *
+     * @return
+     */
+    public static String getPassword() {
+        MyUserDetails user = getUser();
+        return user == null ? null : user.getPassword();
+    }
 }
