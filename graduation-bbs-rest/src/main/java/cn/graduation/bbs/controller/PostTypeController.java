@@ -24,31 +24,31 @@ public class PostTypeController {
 
     @PostMapping("/list")
     public WebResponse queryPostTypeList(@RequestBody PostTypeFilter postTypeFilter) {
-        log.info("帖子类型列表 queryPostTypeList 请求参数{" + postTypeFilter + "}");
+        log.info("帖子类型列表 queryPostTypeList 请求参数 {}", postTypeFilter);
         return postTypeService.queryPostTypeList(postTypeFilter);
     }
 
     @PostMapping("/save")
     public WebResponse save(@RequestBody PostTypeFilter postTypeFilter) {
-        log.info("新增帖子类型 请求参数{" + postTypeFilter + "}");
+        log.info("新增帖子类型 请求参数 {}", postTypeFilter);
         return postTypeService.save(postTypeFilter);
     }
 
     @PostMapping("/delete")
     public WebResponse delete(@RequestBody PostTypeFilter postTypeFilter) {
-        log.info("删除帖子类型 请求参数{" + postTypeFilter + "}");
+        log.info("删除帖子类型 请求参数 {}", postTypeFilter);
         return postTypeService.delete(postTypeFilter);
     }
 
     @PostMapping("/update")
     public WebResponse update(@RequestBody PostTypeFilter postTypeFilter) {
-        log.info("修改帖子类型 请求参数{" + postTypeFilter + "}");
+        log.info("修改帖子类型 请求参数 {}", postTypeFilter);
         return postTypeService.update(postTypeFilter);
     }
 
     @PostMapping("/detail")
     public WebResponse queryPostTypeById(@RequestBody PostTypeFilter postTypeFilter) {
-        log.info("根据id查询帖子类型 请求参数{" + postTypeFilter + "}");
+        log.info("根据id查询帖子类型 请求参数 {}", postTypeFilter);
         return postTypeService.queryPostTypeById(postTypeFilter);
     }
 }

@@ -20,7 +20,7 @@ public class RoleController {
 
     @PostMapping("/list")
     public WebResponse queryRoleList() {
-        log.info("查询角色信息 queryRoleList 请求参数{}");
+        log.info("查询角色信息 queryRoleList 请求参数 {}");
         return roleService.queryRoleList();
     }
 }
