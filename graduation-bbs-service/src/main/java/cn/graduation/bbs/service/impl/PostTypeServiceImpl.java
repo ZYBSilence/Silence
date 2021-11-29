@@ -8,6 +8,7 @@ import cn.graduation.bbs.dao.PostTypeDao;
 import cn.graduation.bbs.dto.post.PostTypeDTO;
 import cn.graduation.bbs.entity.PostTypeEntity;
 import cn.graduation.bbs.enums.StatusCodeEnum;
+import cn.graduation.bbs.service.CommentService;
 import cn.graduation.bbs.service.PostTypeService;
 import cn.graduation.bbs.utils.EmptyUtils;
 import cn.graduation.bbs.vo.post.PostTypeFilter;
@@ -15,6 +16,7 @@ import cn.graduation.bbs.vo.post.PostTypeVO;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +35,9 @@ public class PostTypeServiceImpl implements PostTypeService {
 
     @Autowired
     private PostDao postDao;
+
+    @Autowired
+    private CommentService commentService;
 
     /**
      * 帖子类型列表
@@ -143,6 +148,23 @@ public class PostTypeServiceImpl implements PostTypeService {
         PostTypeEntity entity = postTypeDao.queryPostTypeById(dto);
         web.setData(entity);
         return web;
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void testTranslation() {
+        System.out.println("zxvc");
+        commentService.testSave(new PostTypeDTO("ccc"));
+        try {
+            commentService.testSave(new PostTypeDTO("ddd"));
+//            postTypeDao.testTranslation();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void testSave(PostTypeDTO dto) {
+        postTypeDao.save(dto);
     }
 
     /**

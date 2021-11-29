@@ -48,4 +48,7 @@ public interface PostTypeService {
      * @return
      */
     WebResponse queryPostTypeById(PostTypeFilter postTypeFilter);
+
+    void testTranslation();
+
 }

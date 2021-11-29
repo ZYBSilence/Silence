@@ -14,15 +14,20 @@ import cn.graduation.bbs.enums.CollectEnum;
 import cn.graduation.bbs.enums.PostTagsEnum;
 import cn.graduation.bbs.enums.StatusCodeEnum;
 import cn.graduation.bbs.service.PostService;
+import cn.graduation.bbs.service.PostTypeService;
 import cn.graduation.bbs.utils.EmptyUtils;
 import cn.graduation.bbs.utils.OperUserUtils;
 import cn.graduation.bbs.vo.post.PostDetailVO;
 import cn.graduation.bbs.vo.post.PostFilter;
 import cn.graduation.bbs.vo.post.PostVO;
 import com.github.pagehelper.PageHelper;
+import com.mysql.jdbc.exceptions.MySQLDataException;
+import com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -43,6 +48,9 @@ public class PostServiceImpl implements PostService {
 
     @Autowired
     private PostTypeDao postTypeDao;
+
+    @Autowired
+    private PostTypeService postTypeService;
 
     /**
      * 查询帖子列表
@@ -341,6 +349,28 @@ public class PostServiceImpl implements PostService {
             postDao.addPostTags(userId, postFilter.getId());
         }
         return web;
+    }
+
+    @Override
+    @Transactional
+    public void testTranslation(){
+        PostDTO postDTO = new PostDTO();
+        postDTO.setTitle("aaa");
+        postDTO.setContent("zzz");
+        postDTO.setUserId(123);
+        postDTO.setPostTypeId(1);
+        postDTO.setRecommend(0);
+        postDTO.setStatus(0);
+        postDTO.setCreateTime(new Date());
+        postDao.addPost(postDTO);
+
+        throw new RuntimeException("aaa");
+//        try {
+//            postTypeService.testTranslation();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+
     }
 
     /**

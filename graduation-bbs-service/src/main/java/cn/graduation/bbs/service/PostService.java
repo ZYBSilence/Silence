@@ -3,6 +3,8 @@ package cn.graduation.bbs.service;
 import cn.graduation.bbs.common.WebResponse;
 import cn.graduation.bbs.vo.post.PostFilter;
 
+import java.sql.SQLException;
+
 /**
  * @desc: 帖子管理的业务层接口
  * @author: zyb
@@ -104,4 +106,6 @@ public interface PostService {
      * @return
      */
     WebResponse modifyPostTags(PostFilter postFilter);
+
+    void testTranslation();
 }

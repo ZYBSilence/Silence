@@ -1,6 +1,7 @@
 package cn.graduation.bbs.service;
 
 import cn.graduation.bbs.common.WebResponse;
+import cn.graduation.bbs.dto.post.PostTypeDTO;
 import cn.graduation.bbs.vo.comment.CommentFilter;
 import cn.graduation.bbs.vo.post.PostTypeFilter;
 
@@ -73,4 +74,6 @@ public interface CommentService {
      * @return
      */
     WebResponse modifyCommentTags(CommentFilter commentFilter);
+
+    void testSave(PostTypeDTO dto);
 }

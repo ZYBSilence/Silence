@@ -67,4 +67,6 @@ public interface PostTypeDao {
      * @return
      */
     PostTypeEntity queryPostTypeById(PostTypeDTO dto);
+
+    void testTranslation();
 }

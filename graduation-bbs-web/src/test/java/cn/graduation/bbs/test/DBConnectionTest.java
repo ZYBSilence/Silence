@@ -1,13 +1,16 @@
 package cn.graduation.bbs.test;
 
 import cn.graduation.bbs.GraduationApplication;
+import cn.graduation.bbs.dao.PostDao;
 import cn.graduation.bbs.dao.UserDao;
 import cn.graduation.bbs.entity.UserEntity;
+import cn.graduation.bbs.service.PostService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -20,6 +23,7 @@ import java.util.List;
  * @since: 2020/1/10 11:18
  */
 @RunWith(SpringRunner.class)
+@EnableTransactionManagement
 @SpringBootTest(classes = GraduationApplication.class)
 public class DBConnectionTest {
 
@@ -28,6 +32,9 @@ public class DBConnectionTest {
 
     @Autowired
     DataSource dataSource;
+
+    @Autowired
+    private PostService postService;
 
     @Test
     public void conTest() throws SQLException {
@@ -42,5 +49,10 @@ public class DBConnectionTest {
     public void dbTest() {
 //        List<UserEntity> zhang = userDao.queryUserList("zhang");
 //        System.out.println(zhang);
+    }
+
+    @Test
+    public void testTranslation(){
+        postService.testTranslation();
     }
 }

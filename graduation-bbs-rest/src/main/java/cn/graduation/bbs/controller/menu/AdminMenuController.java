@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping("/api/admin")
 public class AdminMenuController {
 
-    private static final String PREFIX = "/admin/";
+    private static final String PREFIX = "admin/";
 
     @GetMapping("/index")
     public String index() {

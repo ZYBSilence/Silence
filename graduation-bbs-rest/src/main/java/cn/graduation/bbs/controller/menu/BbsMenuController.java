@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/api/bbs")
 public class BbsMenuController {
-    private static final String USER = "/user/";
-    private static final String POST = "/post/";
+    private static final String USER = "user/";
+    private static final String POST = "post/";
 
     @GetMapping("/index")
     public String index() {

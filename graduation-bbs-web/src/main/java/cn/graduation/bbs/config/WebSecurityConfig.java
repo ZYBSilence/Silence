@@ -152,6 +152,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         boolean m = b.matches("123456", "$2a$10$doA9AomVXcd2k4uPjisy0OvNL4T21qefLCuYQkv1rsGbynvl45AiO");
         System.out.println(encode);
         System.out.println(m);
+        System.out.println(b.encode("123456"));
     }
 
     /**

@@ -3,6 +3,7 @@ package cn.graduation.bbs.controller;
 import cn.graduation.bbs.common.WebResponse;
 import cn.graduation.bbs.service.PostService;
 import cn.graduation.bbs.vo.post.PostFilter;
+import io.swagger.annotations.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
  * @author: zyb
  * @since: 2020/4/2 11:43
  */
+@Api("PostController相关的api")
 @Slf4j
 @RestController
 @RequestMapping("/api/post")
@@ -19,7 +21,11 @@ public class PostController {
     @Autowired
     private PostService postService;
 
+    @ApiOperation(value = "分页查询帖子列表")
     @PostMapping("/list")
+    @ApiResponses({
+            @ApiResponse(code = 200, message = "请求成功")
+    })
     public WebResponse queryPostList(@RequestBody PostFilter postFilter) {
         log.info("根据条件分页查询帖子列表 queryPostList 请求参数 {}", postFilter);
         return postService.queryPostList(postFilter);

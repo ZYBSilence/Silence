@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="graduation-bbs-api" />
+        <module name="graduation-bbs-dao" />
+        <module name="graduation-bbs-domain" />
+        <module name="graduation-bbs-rest" />
+        <module name="graduation-bbs-service" />
+        <module name="graduation-bbs-web" />
+        <module name="graduationbbsapi" />
+        <module name="graduationbbsdao" />
+        <module name="graduationbbsrest" />
+        <module name="graduationbbsservice" />
+        <module name="graduationbbsweb" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="graduation-bbs" options="-parameters" />
+      <module name="graduation-bbs-api" options="-parameters" />
+      <module name="graduation-bbs-dao" options="-parameters" />
+      <module name="graduation-bbs-domain" options="-parameters" />
+      <module name="graduation-bbs-rest" options="-parameters" />
+      <module name="graduation-bbs-service" options="-parameters" />
+      <module name="graduation-bbs-web" options="-parameters" />
+      <module name="graduationbbsapi" options="-parameters" />
+      <module name="graduationbbsdao" options="-parameters" />
+      <module name="graduationbbsrest" options="-parameters" />
+      <module name="graduationbbsservice" options="-parameters" />
+      <module name="graduationbbsweb" options="-parameters" />
+    </option>
+  </component>
+</project>

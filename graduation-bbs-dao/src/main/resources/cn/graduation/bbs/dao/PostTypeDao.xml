@@ -55,6 +55,9 @@
         </set>
         where id = #{id}
     </update>
+    <update id="testTranslation">
+        aaa
+    </update>
 
     <select id="queryPostTypeById" resultMap="p_post_type_result_map">
         select *

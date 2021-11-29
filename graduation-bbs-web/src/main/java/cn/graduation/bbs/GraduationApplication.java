@@ -7,6 +7,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
  * @desc: 启动类
@@ -16,14 +17,15 @@ import org.springframework.context.annotation.Configuration;
 @SpringBootApplication
 @MapperScan(basePackages = {"cn.graduation.bbs.dao"})
 @ServletComponentScan("cn.graduation")
+@EnableTransactionManagement
 @Configuration
-public class GraduationApplication{
+public class GraduationApplication {
 //public class GraduationApplication extends SpringBootServletInitializer {
 
 //    @Override
-////    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-////        return application.sources(GraduationApplication.class);
-////    }
+//    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+//        return application.sources(GraduationApplication.class);
+//    }
 
     public static void main(String[] args) {
         SpringApplication.run(GraduationApplication.class, args);

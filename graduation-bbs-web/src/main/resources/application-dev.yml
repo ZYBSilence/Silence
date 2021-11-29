@@ -1,0 +1,37 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+spring:
+  thymeleaf:
+    cache: false
+
+  # 响应页面默认后缀
+  mvc:
+    view:
+      suffix: .html
+      prefix: /templates/
+    #应该以什么样的路径来访问静态资源,这表示只有静态资源的访问路径为/static/
+  #    static-path-pattern: /static/**
+  # 数据库连接参数配置
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://115.29.179.11:3306/graduation_bbs?characterEncoding=UTF-8
+#    username: root
+#    password: zhangsilence123
+    url: jdbc:mysql://127.0.0.1:3306/graduation_bbs?characterEncoding=UTF-8
+    username: root
+    password: root
+    # 数据库连接池配置
+    type: com.alibaba.druid.pool.DruidDataSource
+
+# 扫描实体类设置别名，减少重复书写
+mybatis:
+  type-aliases-package: cn.graduation.bbs.entity
+  mapper-locations: classpath:cn/graduation/bbs/dao/*.xml
+
+#是否激活 swagger true or false
+swagger:
+  enable: true
+

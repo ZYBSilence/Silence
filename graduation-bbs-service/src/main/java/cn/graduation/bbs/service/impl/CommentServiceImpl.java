@@ -7,8 +7,10 @@ import cn.graduation.bbs.common.ListPage;
 import cn.graduation.bbs.common.WebResponse;
 import cn.graduation.bbs.dao.CommentDao;
 import cn.graduation.bbs.dao.PostDao;
+import cn.graduation.bbs.dao.PostTypeDao;
 import cn.graduation.bbs.dao.UserDao;
 import cn.graduation.bbs.dto.comment.CommentDTO;
+import cn.graduation.bbs.dto.post.PostTypeDTO;
 import cn.graduation.bbs.entity.CommentEntity;
 import cn.graduation.bbs.entity.PostEntity;
 import cn.graduation.bbs.entity.UserEntity;
@@ -25,6 +27,7 @@ import cn.graduation.bbs.vo.user.UserCommentCountVO;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
 import java.util.function.Function;
@@ -46,6 +49,9 @@ public class CommentServiceImpl implements CommentService {
 
     @Autowired
     private PostDao postDao;
+
+    @Autowired
+    private PostTypeDao postTypeDao;
 
     /**
      * 条件查询评论列表
@@ -167,7 +173,7 @@ public class CommentServiceImpl implements CommentService {
             return web;
         }
         ListPage<PostCommentCountDO> doListPage = new ListPage<>(doList);
-        List<Integer> postIdList = doList.stream().map(v -> v.getPostId()).collect(Collectors.toList());
+        List<Integer> postIdList = doList.stream().map(PostCommentCountDO::getPostId).collect(Collectors.toList());
         List<PostEntity> postList = postDao.findByPostIdList(postIdList);
         Map<Integer, PostEntity> postMap = postList.stream().collect(Collectors.toMap(PostEntity::getId, Function.identity()));
         List<PostCommentCountVO> voList = new ArrayList<>();
@@ -259,6 +265,13 @@ public class CommentServiceImpl implements CommentService {
             commentDao.addCommentTags(userId, commentFilter.getId());
         }
         return web;
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void testSave(PostTypeDTO dto) {
+        postTypeDao.save(dto);
+        postTypeDao.testTranslation();
     }
 
     /**
