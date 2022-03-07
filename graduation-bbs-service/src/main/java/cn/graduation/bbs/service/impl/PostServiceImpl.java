@@ -23,9 +23,12 @@ import cn.graduation.bbs.vo.post.PostVO;
 import com.github.pagehelper.PageHelper;
 import com.mysql.jdbc.exceptions.MySQLDataException;
 import com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException;
+import org.springframework.aop.framework.AopContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import sun.awt.AppContext;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -51,6 +54,9 @@ public class PostServiceImpl implements PostService {
 
     @Autowired
     private PostTypeService postTypeService;
+
+    @Autowired
+    private PostService postService;
 
     /**
      * 查询帖子列表
@@ -352,7 +358,7 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    @Transactional
+    @Transactional(rollbackFor = Exception.class, propagation = Propagation.REQUIRES_NEW)
     public void testTranslation(){
         PostDTO postDTO = new PostDTO();
         postDTO.setTitle("aaa");
@@ -363,14 +369,25 @@ public class PostServiceImpl implements PostService {
         postDTO.setStatus(0);
         postDTO.setCreateTime(new Date());
         postDao.addPost(postDTO);
-
+//        ((PostServiceImpl) AopContext.currentProxy()).testTranslation2();
+        postService.testTranslation2();
         throw new RuntimeException("aaa");
-//        try {
-//            postTypeService.testTranslation();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
 
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class, propagation = Propagation.NOT_SUPPORTED)
+    public void testTranslation2(){
+        PostDTO postDTO = new PostDTO();
+        postDTO.setTitle("bbb");
+        postDTO.setContent("zzz");
+        postDTO.setUserId(123);
+        postDTO.setPostTypeId(1);
+        postDTO.setRecommend(0);
+        postDTO.setStatus(0);
+        postDTO.setCreateTime(new Date());
+        postDao.addPost(postDTO);
+//        throw new RuntimeException("aaa");
     }
 
     /**

@@ -26,6 +26,23 @@ spring:
     # 数据库连接池配置
     type: com.alibaba.druid.pool.DruidDataSource
 
+#    mongodb数据库连接参数配置
+  data:
+    mongodb:
+      authentication-database: admin
+      # 数据库的ip地址
+      host: 127.0.0.1
+      # MongoDB端口号
+      port: 27017
+      # 用户账号
+      username: admin
+      # 用户密码
+      password: admin123
+      # 指定使用的数据库
+      # 不必预先创建，不存在该数据库会自动创建
+      database: test
+
+
 # 扫描实体类设置别名，减少重复书写
 mybatis:
   type-aliases-package: cn.graduation.bbs.entity

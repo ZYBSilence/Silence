@@ -108,4 +108,6 @@ public interface PostService {
     WebResponse modifyPostTags(PostFilter postFilter);
 
     void testTranslation();
+
+    void testTranslation2();
 }

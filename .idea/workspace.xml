@@ -1,0 +1,1580 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="AUTOSCROLL_TO_SOURCE" value="true" />
+    <option name="GROUP_BY_SEVERITY" value="true" />
+    <option name="FILTER_RESOLVED_ITEMS" value="false" />
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="319db10b-0d9a-4fd7-9880-c9008c4779eb" name="Default Changelist" comment="feat:完善个人中心，部署到阿里云&#10;1.个人中心增加修改用户资料；&#10;2.个人中心增加修改用户头像和密码；&#10;3.服务打包发布到阿里云服务器；">
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/graduation-bbs-domain/src/main/java/cn/graduation/bbs/entity/mongo/MongoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graduation-bbs-service/src/main/java/cn/graduation/bbs/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/graduation-bbs-service/src/main/java/cn/graduation/bbs/service/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graduation-bbs-service/src/main/java/cn/graduation/bbs/service/impl/PostServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/graduation-bbs-service/src/main/java/cn/graduation/bbs/service/impl/PostServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graduation-bbs-service/src/main/java/cn/graduation/bbs/service/impl/PostTypeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/graduation-bbs-service/src/main/java/cn/graduation/bbs/service/impl/PostTypeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graduation-bbs-web/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/graduation-bbs-web/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graduation-bbs-web/src/test/java/cn/graduation/bbs/test/DBConnectionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/graduation-bbs-web/src/test/java/cn/graduation/bbs/test/DBConnectionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
+    <list id="f94f60b2-cf4f-4bbd-8c58-c9e173c3cd94" name="Revert: 1.屏蔽发送邮件工具类里的私人信息" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="graduation-bbs" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package.json" />
+        <option value="mybatis" />
+        <option value="HTML File" />
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>comment</find>
+      <find>yulan</find>
+      <find>editor</find>
+      <find>detail-body</find>
+      <find>face</find>
+      <find>faces</find>
+      <find>options</find>
+      <find>delPost</find>
+      <find>backView</find>
+      <find>commentId</find>
+      <find>select</find>
+      <find>mine-edit</find>
+      <find>upload</find>
+      <find>uploadImg</find>
+      <find>loadUserByUsername</find>
+      <find>e</find>
+      <find>LTAI4FuVfXAQAnaiZfSixc76</find>
+      <find>post/index</find>
+      <find>final</find>
+      <find>oss</find>
+      <find>/upload</find>
+      <find>BaseExceptionHander</find>
+      <find>sec</find>
+      <find>登录</find>
+      <find>/login</find>
+      <find>/api/bbs/login</find>
+      <find>@Tra</find>
+      <find>Transac</find>
+      <find>update</find>
+      <find>slice</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>textContent</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/graduation-bbs-api/src/main/java/cn/graduation/bbs/enums/PostTagsEnum.java" />
+        <option value="$PROJECT_DIR$/graduation-bbs-api/src/main/java/cn/graduation/bbs/vo/comment/CommentVO.java" />
+        <option value="$PROJECT_DIR$/graduation-bbs-api/src/main/java/cn/graduation/bbs/vo/comment/CommentFilter.java" />
+        <option value="$PROJECT_DIR$/graduation-bbs-dao/src/main/java/cn/graduation/bbs/dao/PostDao.java" />
+        <option value="$PROJECT_DIR$/graduation-bbs-dao/src/main/java/cn/graduation/bbs/dao/CommentDao.java" />
+        <option value="$PROJECT_DIR$/graduation-bbs-dao/src/main/resources/cn/graduation/bbs/dao/CommentDao.xml" />
+        <option value="$PROJECT_DIR$/graduation-bbs-api/src/main/java/cn/graduation/bbs/vo/post/PostDetailVO.java" />
+        <option value="$PROJECT_DIR$/graduation-bbs-web/src/main/resources/static/res/js/post/post_detail.js" />
+        <option value="$PROJECT_DIR$/graduation-bbs-api/src/main/java/cn/graduation/bbs/vo/user/UserFilter.java" />
+        <option value="$PROJECT_DIR$/graduation-bbs-web/src/main/resources/templates/user/set.html" />
+        <option value="$PROJECT_DIR$/graduation-bbs-api/src/main/java/cn/graduation/bbs/vo/user/UserModifyPwdFilter.java" />
+        <option value="$PROJECT_DIR$/graduation-bbs-service/src/main/java/cn/graduation/bbs/service/UserService.java" />
+        <option value="$PROJECT_DIR$/graduation-bbs-api/src/main/java/cn/graduation/bbs/utils/OperUserUtils.java" />
+        <option value="$PROJECT_DIR$/graduation-bbs-web/src/main/resources/static/res/js/user/user_set.js" />
+        <option value="$PROJECT_DIR$/graduation-bbs-service/src/main/java/cn/graduation/bbs/service/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/graduation-bbs-api/src/main/java/cn/graduation/bbs/utils/MailUtils.java" />
+        <option value="$PROJECT_DIR$/graduation-bbs-dao/src/main/resources/cn/graduation/bbs/dao/UserDao.xml" />
+        <option value="$PROJECT_DIR$/graduation-bbs-dao/src/main/java/cn/graduation/bbs/dao/UserDao.java" />
+        <option value="$PROJECT_DIR$/graduation-bbs-rest/src/main/java/cn/graduation/bbs/controller/CommentController.java" />
+        <option value="$PROJECT_DIR$/graduation-bbs-rest/src/main/java/cn/graduation/bbs/controller/PostTypeController.java" />
+        <option value="$PROJECT_DIR$/graduation-bbs-rest/src/main/java/cn/graduation/bbs/controller/RoleController.java" />
+        <option value="$PROJECT_DIR$/graduation-bbs-rest/src/main/java/cn/graduation/bbs/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/graduation-bbs-rest/src/main/java/cn/graduation/bbs/controller/FileUploadController.java" />
+        <option value="$PROJECT_DIR$/graduation-bbs-web/src/main/resources/static/admin/js/fileupload/upload.js" />
+        <option value="$PROJECT_DIR$/graduation-bbs-rest/src/main/java/cn/graduation/bbs/controller/PostController.java" />
+        <option value="$PROJECT_DIR$/graduation-bbs-api/src/main/java/cn/graduation/bbs/vo/post/PostFilter.java" />
+        <option value="$PROJECT_DIR$/graduation-bbs-web/src/main/java/cn/graduation/bbs/SwaggerConfig.java" />
+        <option value="$PROJECT_DIR$/graduation-bbs-web/pom.xml" />
+        <option value="$PROJECT_DIR$/graduation-bbs-rest/src/main/java/cn/graduation/bbs/controller/menu/BbsMenuController.java" />
+        <option value="$PROJECT_DIR$/graduation-bbs-rest/src/main/java/cn/graduation/bbs/controller/menu/AdminMenuController.java" />
+        <option value="$PROJECT_DIR$/graduation-bbs-api/src/main/java/cn/graduation/bbs/common/BaseExceptionHander.java" />
+        <option value="$PROJECT_DIR$/graduation-bbs-web/src/main/java/cn/graduation/bbs/config/WebSecurityConfig.java" />
+        <option value="$PROJECT_DIR$/graduation-bbs-web/src/main/resources/templates/common/common.html" />
+        <option value="$PROJECT_DIR$/graduation-bbs-service/src/main/java/cn/graduation/bbs/service/PostTypeService.java" />
+        <option value="$PROJECT_DIR$/graduation-bbs-dao/src/main/java/cn/graduation/bbs/dao/PostTypeDao.java" />
+        <option value="$PROJECT_DIR$/graduation-bbs-dao/src/main/resources/cn/graduation/bbs/dao/PostTypeDao.xml" />
+        <option value="$PROJECT_DIR$/graduation-bbs-api/src/main/java/cn/graduation/bbs/dto/post/PostTypeDTO.java" />
+        <option value="$PROJECT_DIR$/graduation-bbs-web/src/main/java/cn/graduation/bbs/GraduationApplication.java" />
+        <option value="$PROJECT_DIR$/graduation-bbs-service/src/main/java/cn/graduation/bbs/service/PostService.java" />
+        <option value="$PROJECT_DIR$/graduation-bbs-service/src/main/java/cn/graduation/bbs/service/CommentService.java" />
+        <option value="$PROJECT_DIR$/graduation-bbs-service/src/main/java/cn/graduation/bbs/service/impl/CommentServiceImpl.java" />
+        <option value="$PROJECT_DIR$/graduation-bbs-service/src/main/java/cn/graduation/bbs/service/impl/PostTypeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/graduation-bbs-web/src/main/resources/application-test.yml" />
+        <option value="$PROJECT_DIR$/graduation-bbs-web/src/main/resources/static/admin/js/bg/app.js" />
+        <option value="$PROJECT_DIR$/graduation-bbs-web/src/main/resources/banner.txt" />
+        <option value="$PROJECT_DIR$/graduation-bbs-web/src/main/resources/templates/index.html" />
+        <option value="$PROJECT_DIR$/graduation-bbs-web/src/main/resources/static/res/js/index.js" />
+        <option value="$PROJECT_DIR$/graduation-bbs-service/src/main/java/cn/graduation/bbs/service/impl/PostServiceImpl.java" />
+        <option value="$PROJECT_DIR$/graduation-bbs-web/src/test/java/cn/graduation/bbs/test/DBConnectionTest.java" />
+        <option value="$PROJECT_DIR$/graduation-bbs-web/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\java\maven\repository" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../java/maven/apache-maven-3.6.0" />
+        <option name="userSettingsFile" value="D:\java\maven\apache-maven-3.6.0\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="graduation-bbs" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="graduation-bbs" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="1.8" />
+    <option name="mavenProperties">
+      <map>
+        <entry key="DarchetypeCatalog" value="internal" />
+      </map>
+    </option>
+    <option name="skipTests" value="true" />
+    <option name="vmOptions" value="-DarchetypeCatalog=internal" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-12" />
+    <option name="y" value="-12" />
+    <option name="width" value="1466" />
+    <option name="height" value="1746" />
+  </component>
+  <component name="ProjectId" id="23dMWxDPq14gBev5TnOJAiFAJKa" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <flattenPackages ProjectPane="false" />
+      <showMembers ProjectPane="false" />
+      <hideEmptyPackages ProjectPane="true" />
+      <abbreviatePackageNames ProjectPane="true" />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="graduation-bbs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graduation-bbs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graduation-bbs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graduation-bbs" type="462c0819:PsiDirectoryNode" />
+              <item name="graduation-bbs-api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graduation-bbs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graduation-bbs" type="462c0819:PsiDirectoryNode" />
+              <item name="graduation-bbs-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graduation-bbs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graduation-bbs" type="462c0819:PsiDirectoryNode" />
+              <item name="graduation-bbs-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graduation-bbs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graduation-bbs" type="462c0819:PsiDirectoryNode" />
+              <item name="graduation-bbs-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graduation-bbs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graduation-bbs" type="462c0819:PsiDirectoryNode" />
+              <item name="graduation-bbs-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="bbs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graduation-bbs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graduation-bbs" type="462c0819:PsiDirectoryNode" />
+              <item name="graduation-bbs-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="bbs" type="462c0819:PsiDirectoryNode" />
+              <item name="enums" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graduation-bbs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graduation-bbs" type="462c0819:PsiDirectoryNode" />
+              <item name="graduation-bbs-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="bbs" type="462c0819:PsiDirectoryNode" />
+              <item name="vo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graduation-bbs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graduation-bbs" type="462c0819:PsiDirectoryNode" />
+              <item name="graduation-bbs-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="bbs" type="462c0819:PsiDirectoryNode" />
+              <item name="vo" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graduation-bbs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graduation-bbs" type="462c0819:PsiDirectoryNode" />
+              <item name="graduation-bbs-dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graduation-bbs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graduation-bbs" type="462c0819:PsiDirectoryNode" />
+              <item name="graduation-bbs-dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graduation-bbs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graduation-bbs" type="462c0819:PsiDirectoryNode" />
+              <item name="graduation-bbs-dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graduation-bbs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graduation-bbs" type="462c0819:PsiDirectoryNode" />
+              <item name="graduation-bbs-dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graduation-bbs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graduation-bbs" type="462c0819:PsiDirectoryNode" />
+              <item name="graduation-bbs-dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graduation-bbs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graduation-bbs" type="462c0819:PsiDirectoryNode" />
+              <item name="graduation-bbs-dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graduation-bbs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graduation-bbs" type="462c0819:PsiDirectoryNode" />
+              <item name="graduation-bbs-dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graduation-bbs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graduation-bbs" type="462c0819:PsiDirectoryNode" />
+              <item name="graduation-bbs-domain" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graduation-bbs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graduation-bbs" type="462c0819:PsiDirectoryNode" />
+              <item name="graduation-bbs-domain" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graduation-bbs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graduation-bbs" type="462c0819:PsiDirectoryNode" />
+              <item name="graduation-bbs-domain" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graduation-bbs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graduation-bbs" type="462c0819:PsiDirectoryNode" />
+              <item name="graduation-bbs-domain" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graduation-bbs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graduation-bbs" type="462c0819:PsiDirectoryNode" />
+              <item name="graduation-bbs-domain" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graduation-bbs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graduation-bbs" type="462c0819:PsiDirectoryNode" />
+              <item name="graduation-bbs-web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graduation-bbs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graduation-bbs" type="462c0819:PsiDirectoryNode" />
+              <item name="graduation-bbs-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graduation-bbs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graduation-bbs" type="462c0819:PsiDirectoryNode" />
+              <item name="graduation-bbs-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graduation-bbs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graduation-bbs" type="462c0819:PsiDirectoryNode" />
+              <item name="graduation-bbs-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graduation-bbs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graduation-bbs" type="462c0819:PsiDirectoryNode" />
+              <item name="graduation-bbs-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="bbs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graduation-bbs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graduation-bbs" type="462c0819:PsiDirectoryNode" />
+              <item name="graduation-bbs-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graduation-bbs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graduation-bbs" type="462c0819:PsiDirectoryNode" />
+              <item name="graduation-bbs-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graduation-bbs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graduation-bbs" type="462c0819:PsiDirectoryNode" />
+              <item name="graduation-bbs-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graduation-bbs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="graduation-bbs" type="462c0819:PsiDirectoryNode" />
+              <item name="logs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="graduation-bbs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
+    <property name="ExpandSpringBootSpringBootSettingsPanel" value="false" />
+    <property name="MyBatisLogPluginindexNum" value="31219" />
+    <property name="MyBatisLogPluginparameters" value="Parameters:" />
+    <property name="MyBatisLogPluginpreparing" value="Preparing:" />
+    <property name="MyBatisLogPluginrunning" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1644392767400" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/graduation-bbs-web/src/test/resources" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15527344" />
+    <property name="project.structure.side.proportion" value="0.2027027" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\idea_project\graduation-bbs\graduation-bbs-web\src\test\resources" />
+      <recent name="D:\idea_project\graduation-bbs\graduation-bbs-dao\src\main\resources\cn\graduation\bbs\dao" />
+      <recent name="D:\idea_project\graduation-bbs\graduation-bbs-web\src\main\resources" />
+      <recent name="D:\idea_project\graduation-bbs\graduation-bbs-web\src\main\resources\static\res\mods" />
+      <recent name="D:\idea_project\graduation-bbs\graduation-bbs-web\src\main\resources\static\admin\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\idea_project\graduation-bbs\graduation-bbs-web\src\main\resources\templates\admin" />
+      <recent name="D:\idea_project\graduation-bbs\graduation-bbs-web\src\main\resources\templates" />
+      <recent name="D:\idea_project\graduation-bbs\graduation-bbs-web\src\main\resources\static\admin\images\login" />
+      <recent name="D:\idea_project\graduation-bbs\graduation-bbs-web\src\main\resources\static\admin\js\role" />
+      <recent name="D:\idea_project\graduation-bbs\graduation-bbs-web\src\main\resources\static\admin\images" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.graduation.bbs.entity" />
+      <recent name="cn.graduation.bbs.utils" />
+      <recent name="cn.graduation.bbs" />
+      <recent name="cn.graduation.bbs.bean" />
+    </key>
+  </component>
+  <component name="RestServicesNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="Found 67 services " type="fcff1e1b:RestServiceStructure$RootNode" />
+        </path>
+        <path>
+          <item name="Found 67 services " type="fcff1e1b:RestServiceStructure$RootNode" />
+          <item name="graduation-bbs-rest" type="c588b436:RestServiceStructure$ProjectNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="RunManager" selected="JUnit.DBConnectionTest.testMongoDB">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Deploy to Host" type="DEPLOY_HOST_RUN_CONFIGURATION" factoryName="Deploy to Host">
+      <option name="accountModel" />
+      <option name="accountModels" />
+      <option name="address" />
+      <option name="afterCommand" value="" />
+      <option name="alreadyReset" value="true" />
+      <option name="autoOpen" value="false" />
+      <option name="beforeCommand" value="" />
+      <option name="defaultTabIdx" value="0" />
+      <option name="ecsInstance">
+        <EcsInstance>
+          <option name="OSType" />
+          <option name="instanceId" />
+          <option name="instanceName" />
+          <option name="netType" />
+          <option name="privateIps" />
+          <option name="publicIps" />
+          <option name="regionId" />
+          <option name="tags" />
+        </EcsInstance>
+      </option>
+      <option name="ecsInstances" />
+      <option name="hostIds">
+        <list>
+          <option value="1" />
+        </list>
+      </option>
+      <option name="hostTagId" value="0" />
+      <option name="location" value="/usr/local/src/tomcat/tomcat9_1/webapps" />
+      <option name="pathOrUrl" value="D:\idea_project\graduation-bbs\graduation-bbs-web\target\graduation-bbs-web-1.0-SNAPSHOT.jar" />
+      <option name="tagId" value="0" />
+      <option name="terminalCommand" />
+      <option name="type" value="HOST" />
+      <option name="uploadType" value="FILE" />
+      <method v="2" />
+    </configuration>
+    <configuration name="DBConnectionTest.conTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="graduation-bbs-web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.graduation.bbs.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.graduation.bbs.test" />
+      <option name="MAIN_CLASS_NAME" value="cn.graduation.bbs.test.DBConnectionTest" />
+      <option name="METHOD_NAME" value="conTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DBConnectionTest.testMongoDB" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="graduation-bbs-web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.graduation.bbs.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.graduation.bbs.test" />
+      <option name="MAIN_CLASS_NAME" value="cn.graduation.bbs.test.DBConnectionTest" />
+      <option name="METHOD_NAME" value="testMongoDB" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DBConnectionTest.testMybatisPlusSelect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="graduation-bbs-web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.graduation.bbs.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.graduation.bbs.test" />
+      <option name="MAIN_CLASS_NAME" value="cn.graduation.bbs.test.DBConnectionTest" />
+      <option name="METHOD_NAME" value="testMybatisPlusSelect" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DBConnectionTest.testTranslation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="graduation-bbs-web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.graduation.bbs.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.graduation.bbs.test" />
+      <option name="MAIN_CLASS_NAME" value="cn.graduation.bbs.test.DBConnectionTest" />
+      <option name="METHOD_NAME" value="testTranslation" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GraduationApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="graduation-bbs-web" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.graduation.bbs.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.graduation.bbs.GraduationApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.DBConnectionTest.testTranslation" />
+      <item itemvalue="JUnit.DBConnectionTest.testMybatisPlusSelect" />
+      <item itemvalue="JUnit.DBConnectionTest.conTest" />
+      <item itemvalue="JUnit.DBConnectionTest.testMongoDB" />
+      <item itemvalue="Spring Boot.GraduationApplication (1)" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.DBConnectionTest.testMongoDB" />
+        <item itemvalue="JUnit.DBConnectionTest.conTest" />
+        <item itemvalue="JUnit.DBConnectionTest.testMybatisPlusSelect" />
+        <item itemvalue="JUnit.DBConnectionTest.testTranslation" />
+        <item itemvalue="Spring Boot.GraduationApplication (1)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SshConsoleOptionsProvider">
+    <option name="myEncoding" value="UTF-8" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="319db10b-0d9a-4fd7-9880-c9008c4779eb" name="Default Changelist" comment="" />
+      <changelist id="f94f60b2-cf4f-4bbd-8c58-c9e173c3cd94" name="Revert: 1.屏蔽发送邮件工具类里的私人信息" comment="" />
+      <created>1576650711307</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1576650711307</updated>
+      <workItem from="1576650721521" duration="5945000" />
+      <workItem from="1576726703135" duration="4673000" />
+      <workItem from="1576816118733" duration="3100000" />
+      <workItem from="1577112995839" duration="825000" />
+      <workItem from="1577166731323" duration="1989000" />
+      <workItem from="1577193990955" duration="2169000" />
+      <workItem from="1577673313122" duration="8157000" />
+      <workItem from="1577755065342" duration="16787000" />
+      <workItem from="1577928349985" duration="22697000" />
+      <workItem from="1578558018578" duration="1691000" />
+      <workItem from="1578625740164" duration="16530000" />
+      <workItem from="1578965071447" duration="7584000" />
+      <workItem from="1581906527709" duration="19910000" />
+      <workItem from="1581991545101" duration="4534000" />
+      <workItem from="1582013959990" duration="6987000" />
+      <workItem from="1582077930551" duration="5540000" />
+      <workItem from="1582160987796" duration="4893000" />
+      <workItem from="1582166345865" duration="3439000" />
+      <workItem from="1582169832834" duration="137000" />
+      <workItem from="1582170092247" duration="26406000" />
+      <workItem from="1582506449101" duration="45484000" />
+      <workItem from="1582622497098" duration="3132000" />
+      <workItem from="1582701917828" duration="22413000" />
+      <workItem from="1583111699091" duration="8003000" />
+      <workItem from="1583217101998" duration="2486000" />
+      <workItem from="1583293379397" duration="35911000" />
+      <workItem from="1583481945524" duration="10033000" />
+      <workItem from="1583736914120" duration="9960000" />
+      <workItem from="1583747137861" duration="8084000" />
+      <workItem from="1583809638432" duration="28093000" />
+      <workItem from="1583906914814" duration="37876000" />
+      <workItem from="1584009063074" duration="224000" />
+      <workItem from="1584009370366" duration="216000" />
+      <workItem from="1584009647916" duration="157000" />
+      <workItem from="1584062277540" duration="19376000" />
+      <workItem from="1584320640677" duration="27459000" />
+      <workItem from="1584407871981" duration="3607000" />
+      <workItem from="1584494166574" duration="3550000" />
+      <workItem from="1584503718894" duration="18924000" />
+      <workItem from="1584585621905" duration="1441000" />
+      <workItem from="1584588248764" duration="6928000" />
+      <workItem from="1584600391813" duration="1741000" />
+      <workItem from="1584603902441" duration="875000" />
+      <workItem from="1584604826235" duration="899000" />
+      <workItem from="1584606841811" duration="3231000" />
+      <workItem from="1584611349781" duration="10418000" />
+      <workItem from="1584926018148" duration="31020000" />
+      <workItem from="1585030321135" duration="9400000" />
+      <workItem from="1585098698850" duration="22038000" />
+      <workItem from="1585186769771" duration="997000" />
+      <workItem from="1585193743309" duration="7836000" />
+      <workItem from="1585275531731" duration="14518000" />
+      <workItem from="1585298605475" duration="4778000" />
+      <workItem from="1585536743012" duration="17952000" />
+      <workItem from="1585616768716" duration="27400000" />
+      <workItem from="1585712834186" duration="3914000" />
+      <workItem from="1585724321156" duration="1343000" />
+      <workItem from="1585725762378" duration="1152000" />
+      <workItem from="1585726985977" duration="969000" />
+      <workItem from="1585728023311" duration="738000" />
+      <workItem from="1585728840927" duration="392000" />
+      <workItem from="1585729299647" duration="2565000" />
+      <workItem from="1585731885328" duration="3235000" />
+      <workItem from="1585735215747" duration="3302000" />
+      <workItem from="1585790863051" duration="384000" />
+      <workItem from="1585791325171" duration="89000" />
+      <workItem from="1585791421212" duration="147000" />
+      <workItem from="1585791645562" duration="253000" />
+      <workItem from="1585791974602" duration="27006000" />
+      <workItem from="1585876566363" duration="12386000" />
+      <workItem from="1585893706034" duration="10622000" />
+      <workItem from="1585986898537" duration="4058000" />
+      <workItem from="1586222356124" duration="26991000" />
+      <workItem from="1586308195547" duration="18306000" />
+      <workItem from="1586331061330" duration="13852000" />
+      <workItem from="1586356536521" duration="2540000" />
+      <workItem from="1586394436779" duration="2428000" />
+      <workItem from="1586398484734" duration="13560000" />
+      <workItem from="1586480438943" duration="21079000" />
+      <workItem from="1586740183947" duration="18836000" />
+      <workItem from="1586827365083" duration="16456000" />
+      <workItem from="1586859805173" duration="426000" />
+      <workItem from="1586860262629" duration="1050000" />
+      <workItem from="1586912680466" duration="25108000" />
+      <workItem from="1586946182582" duration="1174000" />
+      <workItem from="1586958268519" duration="1444000" />
+      <workItem from="1586999251675" duration="15349000" />
+      <workItem from="1587024002483" duration="3281000" />
+      <workItem from="1587085669476" duration="1483000" />
+      <workItem from="1587088496990" duration="189000" />
+      <workItem from="1587088748390" duration="6738000" />
+      <workItem from="1587286529850" duration="2876000" />
+      <workItem from="1587307903124" duration="3258000" />
+      <workItem from="1587312311228" duration="1056000" />
+      <workItem from="1587346759172" duration="22343000" />
+      <workItem from="1587387917508" duration="6743000" />
+      <workItem from="1587431435670" duration="29302000" />
+      <workItem from="1587517628040" duration="26935000" />
+      <workItem from="1587557771337" duration="5145000" />
+      <workItem from="1587604398215" duration="35025000" />
+      <workItem from="1587649208929" duration="62357000" />
+      <workItem from="1587863638580" duration="4390000" />
+      <workItem from="1587868060244" duration="349000" />
+      <workItem from="1587868504336" duration="23750000" />
+      <workItem from="1587902070032" duration="5859000" />
+      <workItem from="1587949773564" duration="4022000" />
+      <workItem from="1587960516932" duration="8024000" />
+      <workItem from="1587973840938" duration="15539000" />
+      <workItem from="1588042316528" duration="5149000" />
+      <workItem from="1588083177210" duration="1564000" />
+      <workItem from="1588122496916" duration="4417000" />
+      <workItem from="1588172733892" duration="593000" />
+      <workItem from="1588250534992" duration="470000" />
+      <workItem from="1588407614769" duration="1054000" />
+      <workItem from="1588492808439" duration="786000" />
+      <workItem from="1588588208602" duration="1181000" />
+      <workItem from="1588651305540" duration="685000" />
+      <workItem from="1588729819248" duration="6370000" />
+      <workItem from="1588819523090" duration="5024000" />
+      <workItem from="1588907471998" duration="7633000" />
+      <workItem from="1588988165827" duration="31163000" />
+      <workItem from="1589041357004" duration="702000" />
+      <workItem from="1589080479814" duration="12522000" />
+      <workItem from="1589161932140" duration="10120000" />
+      <workItem from="1589177673311" duration="15474000" />
+      <workItem from="1589246065407" duration="29416000" />
+      <workItem from="1589333982950" duration="5877000" />
+      <workItem from="1589422450419" duration="10291000" />
+      <workItem from="1589508190978" duration="7124000" />
+      <workItem from="1589533457991" duration="4145000" />
+      <workItem from="1589591880081" duration="4011000" />
+      <workItem from="1589765363546" duration="9378000" />
+      <workItem from="1589937231730" duration="1959000" />
+      <workItem from="1590026942836" duration="5640000" />
+      <workItem from="1590114950336" duration="5729000" />
+      <workItem from="1590391064293" duration="2426000" />
+      <workItem from="1590419077019" duration="628000" />
+      <workItem from="1590477731418" duration="6438000" />
+      <workItem from="1590635022814" duration="3602000" />
+      <workItem from="1593073492416" duration="2982000" />
+      <workItem from="1593079394199" duration="636000" />
+      <workItem from="1593326790918" duration="3840000" />
+      <workItem from="1593395278473" duration="6930000" />
+      <workItem from="1593480056436" duration="6782000" />
+      <workItem from="1593568793633" duration="592000" />
+      <workItem from="1594268833463" duration="1846000" />
+      <workItem from="1594364033511" duration="3381000" />
+      <workItem from="1594880710973" duration="6313000" />
+      <workItem from="1594979565493" duration="1066000" />
+      <workItem from="1595493293662" duration="757000" />
+      <workItem from="1596808849238" duration="2267000" />
+      <workItem from="1596878617017" duration="7704000" />
+      <workItem from="1597491492728" duration="1799000" />
+      <workItem from="1598627923548" duration="667000" />
+      <workItem from="1600868753633" duration="596000" />
+      <workItem from="1614672940306" duration="824000" />
+      <workItem from="1614930187713" duration="980000" />
+      <workItem from="1614931195583" duration="799000" />
+      <workItem from="1614932119031" duration="607000" />
+      <workItem from="1615091713459" duration="632000" />
+      <workItem from="1615895558351" duration="301000" />
+      <workItem from="1616985043911" duration="878000" />
+      <workItem from="1617247463671" duration="1998000" />
+      <workItem from="1617871723084" duration="2679000" />
+      <workItem from="1618298844284" duration="1861000" />
+      <workItem from="1618305782208" duration="238000" />
+      <workItem from="1620444253963" duration="888000" />
+      <workItem from="1620456359638" duration="439000" />
+      <workItem from="1620628309410" duration="959000" />
+      <workItem from="1620961565168" duration="6008000" />
+      <workItem from="1620972342486" duration="233000" />
+      <workItem from="1620972610693" duration="5504000" />
+      <workItem from="1621222860413" duration="10647000" />
+      <workItem from="1621339461132" duration="602000" />
+      <workItem from="1622183265972" duration="2457000" />
+      <workItem from="1622388554415" duration="594000" />
+      <workItem from="1623053959298" duration="624000" />
+      <workItem from="1623393952145" duration="5024000" />
+      <workItem from="1624266451868" duration="34000" />
+      <workItem from="1624430398055" duration="1118000" />
+      <workItem from="1625629685051" duration="1544000" />
+      <workItem from="1628068197768" duration="624000" />
+      <workItem from="1628133481160" duration="1731000" />
+      <workItem from="1628236347051" duration="593000" />
+      <workItem from="1629795609403" duration="16000" />
+      <workItem from="1630289983797" duration="104000" />
+      <workItem from="1631929548993" duration="52000" />
+      <workItem from="1634804349535" duration="1133000" />
+      <workItem from="1635322922776" duration="2371000" />
+      <workItem from="1636103926941" duration="1982000" />
+      <workItem from="1636125830896" duration="2282000" />
+      <workItem from="1636335311712" duration="1636000" />
+      <workItem from="1636440229996" duration="696000" />
+      <workItem from="1636522103450" duration="3760000" />
+      <workItem from="1636613417302" duration="8000" />
+      <workItem from="1636947946551" duration="727000" />
+      <workItem from="1636967060225" duration="596000" />
+      <workItem from="1637045994146" duration="766000" />
+      <workItem from="1637551383616" duration="165000" />
+      <workItem from="1638153285317" duration="4556000" />
+      <workItem from="1638235579380" duration="2804000" />
+      <workItem from="1638339015519" duration="1539000" />
+      <workItem from="1638498762567" duration="1211000" />
+      <workItem from="1638717170324" duration="938000" />
+      <workItem from="1638955856812" duration="1332000" />
+      <workItem from="1639020034927" duration="615000" />
+      <workItem from="1639546495638" duration="1930000" />
+      <workItem from="1639616222230" duration="594000" />
+      <workItem from="1640222464575" duration="432000" />
+      <workItem from="1640222908514" duration="13000" />
+      <workItem from="1641374732670" duration="1371000" />
+      <workItem from="1641796285479" duration="4436000" />
+      <workItem from="1642059548094" duration="1613000" />
+      <workItem from="1642421509460" duration="2828000" />
+      <workItem from="1644384359628" duration="30000" />
+      <workItem from="1644385291190" duration="3856000" />
+      <workItem from="1644389222171" duration="194000" />
+      <workItem from="1644389455392" duration="375000" />
+      <workItem from="1644389878388" duration="784000" />
+      <workItem from="1644392742888" duration="26000" />
+      <workItem from="1644567960350" duration="195000" />
+      <workItem from="1645163200222" duration="644000" />
+      <workItem from="1645167463263" duration="1182000" />
+      <workItem from="1646625017959" duration="3530000" />
+      <workItem from="1646632578148" duration="1805000" />
+    </task>
+    <task id="LOCAL-00001" summary="1.新增发布帖子功能；&#10;2.新增上传文件到阿里云；&#10;3.动态创建社区首页；">
+      <created>1587634266388</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1587634266388</updated>
+    </task>
+    <task id="LOCAL-00002" summary="1.删除服务端阿里云文件上传相关代码">
+      <created>1587636824560</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1587636824560</updated>
+    </task>
+    <task id="LOCAL-00003" summary="1.屏蔽发送邮件工具类里的私人信息">
+      <created>1587890385020</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1587890385021</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat:增加帖子中的点赞收藏，完善个人中心&#10;1.增加帖子的点赞操作，并显示点赞数目；&#10;2.增加帖子的收藏操作，并显示收藏数目；&#10;3.增加评论的点赞操作，并显示点赞数目；&#10;4.完善个人中心中我的消息部分；&#10;5.完善个人中心中用户中心部分；">
+      <created>1589185752578</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1589185752578</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat:完善个人中心，部署到阿里云&#10;1.个人中心增加修改用户资料；&#10;2.个人中心增加修改用户头像和密码；&#10;3.服务打包发布到阿里云服务器；">
+      <created>1589802933745</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1589802933746</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fix:修改日志打印格式&#10;1.修改日志打印格式，使用占位符代替传递参数；">
+      <created>1590130956581</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1590130956581</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat: 增加swagger配置以及环境配置文件&#10;&#10;1.增加swagger配置；&#10;2.增加环境配置文件；">
+      <created>1638157380164</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1638157380164</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fix: 配置文件">
+      <created>1638157759678</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1638157759678</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="DBConnectionTest_testTranslation - 2021.11.16 at 15h 02m 14s.xml">
+      <configuration name="DBConnectionTest.testTranslation" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DBConnectionTest_testTranslation - 2022.01.10 at 15h 04m 03s.xml">
+      <configuration name="DBConnectionTest.testTranslation" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DBConnectionTest_testTranslation - 2022.01.10 at 15h 06m 04s.xml">
+      <configuration name="DBConnectionTest.testTranslation" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DBConnectionTest_testTranslation - 2022.01.10 at 15h 09m 25s.xml">
+      <configuration name="DBConnectionTest.testTranslation" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DBConnectionTest_testTranslation - 2022.01.10 at 15h 10m 11s.xml">
+      <configuration name="DBConnectionTest.testTranslation" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DBConnectionTest_testTranslation - 2022.01.10 at 15h 22m 29s.xml">
+      <configuration name="DBConnectionTest.testTranslation" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DBConnectionTest_conTest - 2022.02.09 at 15h 12m 10s.xml">
+      <configuration name="DBConnectionTest.conTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DBConnectionTest_conTest - 2022.02.09 at 15h 16m 48s.xml">
+      <configuration name="DBConnectionTest.conTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DBConnectionTest_conTest - 2022.02.09 at 15h 18m 38s.xml">
+      <configuration name="DBConnectionTest.conTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DBConnectionTest_conTest - 2022.02.09 at 15h 22m 06s.xml">
+      <configuration name="DBConnectionTest.conTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1470179000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-6" y="-6" width="1453" height="873" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7811245" visible="true" weight="0.26308244" />
+      <window_info id="Structure" order="1" sideWeight="0.2188755" side_tool="true" weight="0.30394265" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" sideWeight="0.2188755" side_tool="true" weight="0.30394265" />
+      <window_info id="Web" order="7" sideWeight="0.1588785" side_tool="true" weight="0.27382752" />
+      <window_info id="Alibaba Cloud Explorer" order="8" />
+      <window_info anchor="bottom" id="Inspection Results" order="0" weight="0.44590163" />
+      <window_info anchor="bottom" id="Application Servers" order="1" />
+      <window_info anchor="bottom" id="Terminal" order="2" weight="0.32884097" />
+      <window_info anchor="bottom" x="22" y="236" width="1322" height="256" id="Run" order="3" weight="0.44474393" />
+      <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.50107527" side_tool="true" weight="0.32884097" />
+      <window_info anchor="bottom" id="Messages" order="5" sideWeight="0.49924356" weight="0.25067386" />
+      <window_info anchor="bottom" id="Debug" order="6" sideWeight="0.75718606" weight="0.14285715" />
+      <window_info anchor="bottom" id="TODO" order="7" weight="0.32614556" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Java Enterprise" order="9" weight="0.19541779" />
+      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49848714" weight="0.4245283" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="12" />
+      <window_info anchor="bottom" id="Find" order="13" sideWeight="0.49848714" weight="0.32884097" />
+      <window_info anchor="bottom" id="Cvs" order="14" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="15" weight="0.4" />
+      <window_info anchor="bottom" id="Spring" order="16" weight="0.32884097" />
+      <window_info anchor="bottom" id="Statistic" order="17" weight="0.7508197" />
+      <window_info anchor="bottom" id="MyBatis Log" order="18" sideWeight="0.49848714" weight="0.124590166" />
+      <window_info anchor="bottom" id="Codeup" order="19" weight="0.32884097" />
+      <window_info anchor="bottom" id="Alibaba Cloud View" order="20" sideWeight="0.49892473" weight="0.32884097" />
+      <window_info anchor="right" id="Alibaba Log Console" order="0" weight="0.3297491" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Maven" order="2" visible="true" weight="0.15412186" />
+      <window_info anchor="right" id="RestServices" order="3" weight="0.086021505" />
+      <window_info anchor="right" id="Bean Validation" order="4" weight="0.32759857" />
+      <window_info anchor="right" id="Json Parser" order="5" weight="0.3290469" />
+      <window_info anchor="right" id="Ant Build" order="6" weight="0.24802868" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="8" />
+      <window_info anchor="right" id="Capture Analysis" order="9" />
+      <window_info anchor="right" id="Palette&#9;" order="10" />
+      <window_info anchor="right" id="Theme Preview" order="11" />
+      <window_info anchor="right" id="Database" order="12" weight="0.32903227" />
+      <window_info anchor="right" id="Alibaba ROS Templates" order="13" show_stripe_button="false" weight="0.32903227" />
+      <window_info anchor="right" id="Alibaba Function Compute" order="14" show_stripe_button="false" weight="0.32903227" />
+      <window_info anchor="right" id="Api Debugger" order="15" weight="0.329296" />
+      <window_info anchor="right" id="aiXcoder" order="16" weight="0.32980332" />
+      <window_info anchor="right" id="Word Book" order="17" weight="0.3297491" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7811245" visible="true" weight="0.25591397" />
+      <window_info id="Structure" order="1" sideWeight="0.2188755" side_tool="true" weight="0.30394265" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" sideWeight="0.2188755" side_tool="true" weight="0.30394265" />
+      <window_info id="Web" order="7" sideWeight="0.1588785" side_tool="true" weight="0.27382752" />
+      <window_info id="Alibaba Cloud Explorer" order="8" />
+      <window_info anchor="bottom" id="Inspection Results" order="0" weight="0.44590163" />
+      <window_info anchor="bottom" id="Application Servers" order="1" />
+      <window_info anchor="bottom" id="Terminal" order="2" weight="0.32884097" />
+      <window_info anchor="bottom" x="22" y="236" width="1322" height="256" id="Run" order="3" weight="0.57277626" />
+      <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.50107527" side_tool="true" weight="0.32884097" />
+      <window_info anchor="bottom" id="Messages" order="5" sideWeight="0.49924356" weight="0.2884097" />
+      <window_info anchor="bottom" id="Debug" order="6" sideWeight="0.75718606" weight="0.43261456" />
+      <window_info anchor="bottom" id="TODO" order="7" weight="0.32749325" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Java Enterprise" order="9" weight="0.19541779" />
+      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49848714" weight="0.4245283" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="12" />
+      <window_info anchor="bottom" id="Find" order="13" sideWeight="0.49848714" weight="0.32884097" />
+      <window_info anchor="bottom" id="Cvs" order="14" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="15" weight="0.4" />
+      <window_info anchor="bottom" id="Spring" order="16" weight="0.32884097" />
+      <window_info anchor="bottom" id="Statistic" order="17" weight="0.7508197" />
+      <window_info anchor="bottom" id="MyBatis Log" order="18" sideWeight="0.49848714" weight="0.124590166" />
+      <window_info anchor="bottom" id="Codeup" order="19" weight="0.32884097" />
+      <window_info anchor="bottom" id="Alibaba Cloud View" order="20" sideWeight="0.49892473" weight="0.32884097" />
+      <window_info anchor="right" id="Alibaba Log Console" order="0" weight="0.3297491" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Maven" order="2" weight="0.050179213" />
+      <window_info anchor="right" id="RestServices" order="3" weight="0.086021505" />
+      <window_info anchor="right" id="Bean Validation" order="4" weight="0.32759857" />
+      <window_info anchor="right" id="Json Parser" order="5" weight="0.3290469" />
+      <window_info anchor="right" id="Ant Build" order="6" weight="0.24802868" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="8" />
+      <window_info anchor="right" id="Capture Analysis" order="9" />
+      <window_info anchor="right" id="Palette&#9;" order="10" />
+      <window_info anchor="right" id="Theme Preview" order="11" />
+      <window_info anchor="right" id="Database" order="12" weight="0.32903227" />
+      <window_info anchor="right" id="Alibaba ROS Templates" order="13" show_stripe_button="false" weight="0.32903227" />
+      <window_info anchor="right" id="Alibaba Function Compute" order="14" show_stripe_button="false" weight="0.32903227" />
+      <window_info anchor="right" id="Api Debugger" order="15" weight="0.329296" />
+      <window_info anchor="right" id="aiXcoder" order="16" weight="0.32980332" />
+      <window_info anchor="right" id="Word Book" order="17" weight="0.3297491" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.configurationType" implementationName="DEPLOY_HOST_RUN_CONFIGURATION" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
+    <MESSAGE value="1.新增发布帖子功能；&#10;2.新增上传文件到阿里云；&#10;3.动态创建社区首页；" />
+    <MESSAGE value="1.删除服务端阿里云文件上传相关代码" />
+    <MESSAGE value="1.屏蔽发送邮件工具类里的私人信息" />
+    <MESSAGE value="feat:增加帖子中的点赞收藏，完善个人中心&#10;1.增加帖子的点赞操作，并显示点赞数目；&#10;2.增加帖子的收藏操作，并显示收藏数目；&#10;3.增加评论的点赞操作，并显示点赞数目；&#10;4.完善个人中心中我的消息部分；&#10;5.完善个人中心中用户中心部分；" />
+    <MESSAGE value="feat:完善个人中心，部署到阿里云&#10;1.个人中心增加修改用户资料；&#10;2.个人中心增加修改用户头像和密码；&#10;3.服务打包发布到阿里云服务器；" />
+    <MESSAGE value="fix:修改日志打印格式&#10;1.修改日志打印格式，使用占位符代替传递参数；" />
+    <MESSAGE value="feat: 增加swagger配置以及环境配置文件&#10;&#10;1.增加swagger配置；&#10;2.增加环境配置文件；" />
+    <MESSAGE value="fix: 配置文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: 配置文件" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/2.0.6.RELEASE/spring-boot-2.0.6.RELEASE.jar!/org/springframework/boot/SpringApplication.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="146" selection-start-line="146" selection-end-line="146" />
+          <folding>
+            <element signature="e#4450#4451#0" expanded="true" />
+            <element signature="e#4508#4509#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-rest/src/main/java/cn/graduation/bbs/controller/FileUploadController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="623">
+          <caret line="78" column="30" selection-start-line="78" selection-start-column="30" selection-end-line="78" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-web/src/main/resources/static/json/signin.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-web/src/main/resources/static/admin/js/bg/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-api/src/main/java/cn/graduation/bbs/vo/post/PostDetailVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-api/src/main/java/cn/graduation/bbs/vo/post/PostTypeVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-api/src/main/java/cn/graduation/bbs/enums/CollectEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-api/src/main/java/cn/graduation/bbs/enums/PostTagsEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-api/src/main/java/cn/graduation/bbs/enums/StatusCodeEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-web/src/main/java/cn/graduation/bbs/config/WebSecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-web/src/main/resources/static/res/js/post/post_add.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-web/src/main/resources/static/admin/js/user/user_quality.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-web/src/main/resources/static/admin/js/post/post_banned_list.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-web/src/main/resources/static/admin/js/user/user_list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#style#0;n#span#0;n#label#0;n#td#0;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#3;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#5;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#7;n#tr#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#8;n#tr#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-web/src/main/resources/static/res/js/post/post_detail.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-web/src/main/resources/static/res/js/post/post_index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-web/src/main/resources/application-test.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-web/src/main/resources/static/admin/js/post/post_type_list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="137" column="32" selection-start-line="137" selection-start-column="32" selection-end-line="138" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-web/src/main/resources/static/res/images/logo-1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-web/src/main/resources/laojunlogo.png" />
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-web/src/main/resources/static/res/images/laojun.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-web/src/main/resources/banner.txt" />
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-web/src/main/resources/log4j2-spring.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-web/src/main/resources/static/res/images/laojunlogo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-web/src/main/resources/static/res/images/logo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-web/src/main/resources/static/res/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="56" column="16" lean-forward="true" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-api/src/main/java/cn/graduation/bbs/vo/post/PostFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-154">
+          <caret line="24" column="27" lean-forward="true" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-web/src/main/java/cn/graduation/bbs/SwaggerConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="770">
+          <caret line="46" column="24" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-web/src/main/java/cn/graduation/bbs/GraduationApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1118#1119#0" expanded="true" />
+            <element signature="e#1190#1191#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-web/src/main/resources/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-web/src/main/resources/application-dev.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="770">
+          <caret line="35" column="14" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386408">
+          <caret line="17577" column="17" selection-start-line="17577" selection-start-column="17" selection-end-line="17577" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../java/jdk/jdk8/jre/lib/rt.jar!/sun/awt/AppContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="101" column="35" selection-start-line="101" selection-start-column="35" selection-end-line="101" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/5.0.10.RELEASE/spring-aop-5.0.10.RELEASE.jar!/org/springframework/aop/framework/AopContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="28" column="28" lean-forward="true" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-service/src/main/java/cn/graduation/bbs/service/PostTypeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="51" column="9" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-dao/src/main/java/cn/graduation/bbs/dao/PostMapper.java" />
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-domain/src/main/java/cn/graduation/bbs/entity/Post.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/5.0.10.RELEASE/spring-test-5.0.10.RELEASE.jar!/org/springframework/test/context/cache/DefaultCacheAwareContextLoaderDelegate.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/5.0.10.RELEASE/spring-test-5.0.10.RELEASE.jar!/org/springframework/test/context/support/DefaultTestContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-web/src/main/java/cn/graduation/bbs/config/DbUserDetailServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-540">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.0.10.RELEASE/spring-beans-5.0.10.RELEASE.jar!/org/springframework/beans/factory/support/SimpleInstantiationStrategy.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="105" selection-start-line="105" selection-end-line="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-web/src/test/java/cn/graduation/bbs/test/DBConnectionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/compiler.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-web/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-service/src/main/java/cn/graduation/bbs/service/impl/PostTypeServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4180">
+          <caret line="213" column="1" selection-start-line="211" selection-end-line="213" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-service/src/main/java/cn/graduation/bbs/service/impl/PostServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7436">
+          <caret line="372" column="11" selection-start-line="372" selection-start-column="4" selection-end-line="372" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graduation-bbs-service/src/main/java/cn/graduation/bbs/service/PostService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2332">
+          <caret line="109" column="9" selection-start-line="109" selection-start-column="9" selection-end-line="109" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2090">
+          <caret line="95" column="36" selection-start-line="95" selection-start-column="36" selection-end-line="95" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/jarRepositories.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/encodings.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>graduation-bbs-web:war</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2027027" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2027027" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2027027" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2027027" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>graduation-bbs</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2027027" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2027027" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: com.alibaba:druid:1.0.9</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.49418604" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+  <component name="mavenExecuteGoalHistory">
+    <option value="" />
+  </component>
+</project>

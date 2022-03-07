@@ -9,6 +9,7 @@ import cn.graduation.bbs.dto.post.PostTypeDTO;
 import cn.graduation.bbs.entity.PostTypeEntity;
 import cn.graduation.bbs.enums.StatusCodeEnum;
 import cn.graduation.bbs.service.CommentService;
+import cn.graduation.bbs.service.PostService;
 import cn.graduation.bbs.service.PostTypeService;
 import cn.graduation.bbs.utils.EmptyUtils;
 import cn.graduation.bbs.vo.post.PostTypeFilter;
@@ -38,6 +39,9 @@ public class PostTypeServiceImpl implements PostTypeService {
 
     @Autowired
     private CommentService commentService;
+
+    @Autowired
+    private PostService postService;
 
     /**
      * 帖子类型列表
@@ -154,13 +158,15 @@ public class PostTypeServiceImpl implements PostTypeService {
     @Transactional(rollbackFor = Exception.class)
     public void testTranslation() {
         System.out.println("zxvc");
-        commentService.testSave(new PostTypeDTO("ccc"));
+//        commentService.testSave(new PostTypeDTO("ccc"));
+        testSave(new PostTypeDTO("aaa"));
         try {
-            commentService.testSave(new PostTypeDTO("ddd"));
-//            postTypeDao.testTranslation();
+            postService.testTranslation();
         } catch (Exception e) {
             e.printStackTrace();
+                    throw new RuntimeException("aaa");
         }
+//        throw new RuntimeException("aaa");
     }
 
     private void testSave(PostTypeDTO dto) {
@@ -203,4 +209,6 @@ public class PostTypeServiceImpl implements PostTypeService {
         PostTypeEntity entity = postTypeDao.findByPostType(postType);
         return (entity != null);
     }
+
+
 }
