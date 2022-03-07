@@ -9,17 +9,8 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="319db10b-0d9a-4fd7-9880-c9008c4779eb" name="Default Changelist" comment="feat:完善个人中心，部署到阿里云&#10;1.个人中心增加修改用户资料；&#10;2.个人中心增加修改用户头像和密码；&#10;3.服务打包发布到阿里云服务器；">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/graduation-bbs-domain/src/main/java/cn/graduation/bbs/entity/mongo/MongoTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graduation-bbs-service/src/main/java/cn/graduation/bbs/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/graduation-bbs-service/src/main/java/cn/graduation/bbs/service/PostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graduation-bbs-service/src/main/java/cn/graduation/bbs/service/impl/PostServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/graduation-bbs-service/src/main/java/cn/graduation/bbs/service/impl/PostServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graduation-bbs-service/src/main/java/cn/graduation/bbs/service/impl/PostTypeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/graduation-bbs-service/src/main/java/cn/graduation/bbs/service/impl/PostTypeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graduation-bbs-web/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/graduation-bbs-web/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graduation-bbs-web/src/test/java/cn/graduation/bbs/test/DBConnectionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/graduation-bbs-web/src/test/java/cn/graduation/bbs/test/DBConnectionTest.java" afterDir="false" />
+    <list default="true" id="319db10b-0d9a-4fd7-9880-c9008c4779eb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <list id="f94f60b2-cf4f-4bbd-8c58-c9e173c3cd94" name="Revert: 1.屏蔽发送邮件工具类里的私人信息" comment="" />
@@ -525,7 +516,7 @@
       <select />
     </treeState>
   </component>
-  <component name="RunManager" selected="JUnit.DBConnectionTest.testMongoDB">
+  <component name="RunManager" selected="Spring Boot.GraduationApplication (1)">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -908,7 +899,7 @@
       <workItem from="1645163200222" duration="644000" />
       <workItem from="1645167463263" duration="1182000" />
       <workItem from="1646625017959" duration="3530000" />
-      <workItem from="1646632578148" duration="1805000" />
+      <workItem from="1646632578148" duration="3940000" />
     </task>
     <task id="LOCAL-00001" summary="1.新增发布帖子功能；&#10;2.新增上传文件到阿里云；&#10;3.动态创建社区首页；">
       <created>1587634266388</created>
@@ -966,7 +957,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638157759678</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="feat: 集成mongoDB&#10;&#10;1.集成mongoDB;&#10;2.编写mongo相关测试类；">
+      <created>1646638974812</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1646638974812</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1161,7 +1159,8 @@
     <MESSAGE value="fix:修改日志打印格式&#10;1.修改日志打印格式，使用占位符代替传递参数；" />
     <MESSAGE value="feat: 增加swagger配置以及环境配置文件&#10;&#10;1.增加swagger配置；&#10;2.增加环境配置文件；" />
     <MESSAGE value="fix: 配置文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: 配置文件" />
+    <MESSAGE value="feat: 集成mongoDB&#10;&#10;1.集成mongoDB;&#10;2.编写mongo相关测试类；" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 集成mongoDB&#10;&#10;1.集成mongoDB;&#10;2.编写mongo相关测试类；" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
