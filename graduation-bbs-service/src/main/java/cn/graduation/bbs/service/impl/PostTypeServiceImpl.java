@@ -18,10 +18,13 @@ import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.support.TransactionTemplate;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
 
 /**
  * @desc: 帖子类型管理的业务层实现类
@@ -42,6 +45,9 @@ public class PostTypeServiceImpl implements PostTypeService {
 
     @Autowired
     private PostService postService;
+
+    @Resource
+    private TransactionTemplate transactionTemplate;
 
     /**
      * 帖子类型列表
@@ -160,13 +166,29 @@ public class PostTypeServiceImpl implements PostTypeService {
         System.out.println("zxvc");
 //        commentService.testSave(new PostTypeDTO("ccc"));
         testSave(new PostTypeDTO("aaa"));
-        try {
-            postService.testTranslation();
-        } catch (Exception e) {
-            e.printStackTrace();
-                    throw new RuntimeException("aaa");
-        }
+
+//        testT2();
+//        try {
+////            transactionTemplate.execute(transactionStatus -> {
+//
+////            CompletableFuture.runAsync(() -> {
+////                postService.testTranslation();
+////            });
+////                return Boolean.TRUE;
+////            });
+//        } catch (Exception e) {
+//            e.printStackTrace();
+////                    throw new RuntimeException("aaa");
+//        }
+
+//        CompletableFuture.runAsync(() -> {
+//            postService.testTranslation();
+//        });
 //        throw new RuntimeException("aaa");
+    }
+
+    private void testT2() {
+        postService.testTranslation();
     }
 
     private void testSave(PostTypeDTO dto) {

@@ -26,10 +26,13 @@ import com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException;
 import org.springframework.aop.framework.AopContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.TransactionDefinition;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.support.TransactionTemplate;
 import sun.awt.AppContext;
 
+import javax.annotation.Resource;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -57,6 +60,9 @@ public class PostServiceImpl implements PostService {
 
     @Autowired
     private PostService postService;
+
+    @Resource
+    private TransactionTemplate transactionTemplate;
 
     /**
      * 查询帖子列表
@@ -358,7 +364,8 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    @Transactional(rollbackFor = Exception.class, propagation = Propagation.REQUIRES_NEW)
+    @Transactional(rollbackFor = Exception.class)
+//    @Transactional(rollbackFor = Exception.class, propagation = Propagation.REQUIRES_NEW)
     public void testTranslation(){
         PostDTO postDTO = new PostDTO();
         postDTO.setTitle("aaa");
@@ -370,13 +377,20 @@ public class PostServiceImpl implements PostService {
         postDTO.setCreateTime(new Date());
         postDao.addPost(postDTO);
 //        ((PostServiceImpl) AopContext.currentProxy()).testTranslation2();
-        postService.testTranslation2();
+//        transactionTemplate.setPropagationBehavior(TransactionDefinition.PROPAGATION_REQUIRED);
+//        transactionTemplate.execute(transactionStatus -> {
+//            testTranslation2();
+//            return Boolean.TRUE;
+//        });
+
+//        postService.testTranslation2();
         throw new RuntimeException("aaa");
 
     }
 
     @Override
-    @Transactional(rollbackFor = Exception.class, propagation = Propagation.NOT_SUPPORTED)
+//    @Transactional(rollbackFor = Exception.class)
+//    @Transactional(rollbackFor = Exception.class, propagation = Propagation.NOT_SUPPORTED)
     public void testTranslation2(){
         PostDTO postDTO = new PostDTO();
         postDTO.setTitle("bbb");
@@ -387,7 +401,7 @@ public class PostServiceImpl implements PostService {
         postDTO.setStatus(0);
         postDTO.setCreateTime(new Date());
         postDao.addPost(postDTO);
-//        throw new RuntimeException("aaa");
+        throw new RuntimeException("aaa");
     }
 
     /**

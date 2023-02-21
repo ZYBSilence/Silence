@@ -8,22 +8,25 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="graduation-bbs-service" />
-        <module name="graduationbbsapi" />
         <module name="graduation-bbs-domain" />
-        <module name="graduationbbsrest" />
+        <module name="graduation-bbs-api" />
         <module name="graduation-bbs-dao" />
         <module name="graduation-bbs-web" />
         <module name="graduation-bbs-rest" />
-        <module name="graduationbbsdao" />
-        <module name="graduationbbsweb" />
-        <module name="graduation-bbs-api" />
-        <module name="graduationbbsservice" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="graduation-bbs" target="1.8" />
+      <module name="graduation-bbs-api" target="1.8" />
+      <module name="graduation-bbs-dao" target="1.8" />
+      <module name="graduation-bbs-domain" target="1.8" />
+      <module name="graduation-bbs-rest" target="1.8" />
+      <module name="graduation-bbs-service" target="1.8" />
+      <module name="graduation-bbs-web" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="graduation-bbs" options="-parameters" />
       <module name="graduation-bbs-api" options="-parameters" />
       <module name="graduation-bbs-dao" options="-parameters" />
       <module name="graduation-bbs-domain" options="-parameters" />

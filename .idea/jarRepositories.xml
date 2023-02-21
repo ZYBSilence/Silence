@@ -4,12 +4,7 @@
     <remote-repository>
       <option name="id" value="central" />
       <option name="name" value="Central Repository" />
-      <option name="url" value="http://maven.aliyun.com/nexus/content/groups/public/" />
-    </remote-repository>
-    <remote-repository>
-      <option name="id" value="central" />
-      <option name="name" value="Central Repository" />
-      <option name="url" value="http://111.231.85.46:8081/repository/maven-public/" />
+      <option name="url" value="http://120.26.167.7:9081/repository/maven-public/" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="central" />

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/graduation-bbs.iml" filepath="$PROJECT_DIR$/graduation-bbs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/graduation-bbs-api/graduation-bbs-api.iml" filepath="$PROJECT_DIR$/graduation-bbs-api/graduation-bbs-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/graduation-bbs-dao/graduation-bbs-dao.iml" filepath="$PROJECT_DIR$/graduation-bbs-dao/graduation-bbs-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/graduation-bbs-domain/graduation-bbs-domain.iml" filepath="$PROJECT_DIR$/graduation-bbs-domain/graduation-bbs-domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/graduation-bbs-rest/graduation-bbs-rest.iml" filepath="$PROJECT_DIR$/graduation-bbs-rest/graduation-bbs-rest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/graduation-bbs-service/graduation-bbs-service.iml" filepath="$PROJECT_DIR$/graduation-bbs-service/graduation-bbs-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/graduation-bbs-web/graduation-bbs-web.iml" filepath="$PROJECT_DIR$/graduation-bbs-web/graduation-bbs-web.iml" />
+    </modules>
+  </component>
+</project>
